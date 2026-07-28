@@ -1,0 +1,36 @@
+DECIMAL_PLACES = 7
+
+def f(x, y):
+    """
+    Here you are going to provide the f(x, y) = dy/dx.
+    It will return the value of the functions. """
+
+    return x + y
+
+def predictor(x, y, h):
+    """
+    This is returns the euler's value to find y(x).
+    You can iterate it as many times as you want.
+    In modified euler this term is called predictor.
+    It predicts the initial value.
+    """
+
+    return y + h*f(x, y)
+
+
+def corrector(x, y, y_pred, h):
+    """
+    This here is the corrector usually you can run multiple iterations of this until the values match.
+    It takes the value of y_predictor (y_1_0).
+
+    """
+
+    return y_pred + h/2* (f(x, y) + f(x, y_pred))
+
+x0, y0 = 0, 1
+h = 0.1
+x1=x0+h
+
+y_1_0=predictor(x0, y0, h)
+y_1_1 = corrector(x0, y0, y_1_0, h )
+print(f"y({x1}) : {round(y_1_1, DECIMAL_PLACES)}")
