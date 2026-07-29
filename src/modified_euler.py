@@ -26,11 +26,3 @@ def corrector(x, y, y_pred, h):
     """
 
     return y_pred + h/2* (f(x, y) + f(x, y_pred))
-
-x0, y0 = 0, 1
-h = 0.1
-x1=x0+h
-
-y_1_0=predictor(x0, y0, h)
-y_1_1 = corrector(x0, y0, y_1_0, h )
-print(f"y({x1}) : {round(y_1_1, DECIMAL_PLACES)}")

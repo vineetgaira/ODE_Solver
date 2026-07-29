@@ -23,15 +23,3 @@ def rk4(x, y, h):
 
     return y + k
 
-x0, y0 = 0, 1
-h=0.1
-x1 = x0 + h
-x2 = x1 + h
-x3 = round(x2+h, 2)
-
-y1= rk4(x0, y0, h)
-print(f"Y({x1}) : {round(y1, DECIMAL_PLACES)}")
-y2=rk4(x1, y1, h)
-print(f"Y({x2}) : {round(y2, DECIMAL_PLACES)}")
-y3 = rk4(x2, y2, h)
-print(f"Y({x3}) : {round(y3, DECIMAL_PLACES)}")
