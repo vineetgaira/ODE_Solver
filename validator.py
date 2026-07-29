@@ -1,0 +1,1 @@
+"""This file checks whether the user's input is valid or not."""

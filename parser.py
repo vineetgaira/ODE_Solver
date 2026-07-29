@@ -1,0 +1,1 @@
+"""This file will store the input funtion for the equations and will parse them"""
