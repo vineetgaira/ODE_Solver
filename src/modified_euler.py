@@ -1,4 +1,7 @@
+from src.function import f
+
 def predictor(x, y, h):
+
     """
     This is returns the euler's value to find y(x).
     You can iterate it as many times as you want.

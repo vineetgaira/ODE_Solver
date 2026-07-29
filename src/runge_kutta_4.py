@@ -1,3 +1,4 @@
+from src.function import f
 def rk4(x, y, h):
     """
     This will compute k1, k2, k3, k4 and k and in the end it returns the value of the next y.

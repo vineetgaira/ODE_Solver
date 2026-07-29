@@ -2,7 +2,10 @@ from colorama import Fore
 """This is the main function that will lead all the other methods."""
 from src.utils import get_user_input
 from src.euler import euler_method
+from src.modified_euler import corrector
+from src.runge_kutta_4 import rk4
 from src.constants import DECIMAL_PLACES
+
 
 def menu():
     x0, y0 = 0, 1
@@ -19,13 +22,15 @@ def menu():
         if choice == 1:
             y1 = euler_method(x0, y0, h)
             print(Fore.CYAN+f"Y({Fore.YELLOW+str(x1)}) :{Fore.GREEN+str(round(y1, DECIMAL_PLACES))}")
-            
-
+  
         elif choice == 2:
-            pass
+            y1 = euler_method(x0, y0, h)
+            y_next = corrector(x0, y0, y1, h )
+            print(Fore.CYAN+f"Y({Fore.YELLOW+str(x1)}) :{Fore.GREEN+str(round(y_next, DECIMAL_PLACES))}")
+
         elif choice == 3:
-            # RK4
-            pass
+            y_rk = rk4(x0, y0, h)
+            print(Fore.CYAN+f"Y({Fore.YELLOW+str(x1)}) :{Fore.GREEN+str(round(y_rk, DECIMAL_PLACES))}")
         else:
             return
     
