@@ -1,21 +1,27 @@
 import colorama
 colorama.init(autoreset=True)
+import sympy
+from sympy import symbols, pprint
 from colorama import Fore,Style
 """This is the main function that will lead all the other methods."""
 from src.utils import get_user_input
 from src.euler import euler_method
 from src.modified_euler import corrector
 from src.runge_kutta_4 import rk4
+from src.function import f
 from src.constants import DECIMAL_PLACES
 
 
 def menu():
+    x, y = symbols('x y')
     x0, y0 = 0, 1
     h = 0.1
     x1 = x0 + h 
     x2 = x1 + h
     x3 = x2 + h
+    eq = f(x, y)
     while True:
+        pprint(eq)
         print(Fore.BLUE+"1. Euler's method.\n"
               "2. Modified Euler's method\n" \
               "3. Runge Kutta 4 (RK4)\n" \
