@@ -1,4 +1,6 @@
-from colorama import Fore
+import colorama
+colorama.init(autoreset=True)
+from colorama import Fore,Style
 """This is the main function that will lead all the other methods."""
 from src.utils import get_user_input
 from src.euler import euler_method
@@ -31,8 +33,10 @@ def menu():
         elif choice == 3:
             y_rk = rk4(x0, y0, h)
             print(Fore.CYAN+f"Y({Fore.YELLOW+str(x1)}) :{Fore.GREEN+str(round(y_rk, DECIMAL_PLACES))}")
-        else:
+        elif choice == 4:
             return
+        else:
+            print(Fore.RED+Style.BRIGHT+"Please enter a valid choice"+Style.RESET_ALL)
     
 
 menu()
