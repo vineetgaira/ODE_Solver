@@ -1,1 +1,0 @@
-DECIMAL_PLACES = 7
