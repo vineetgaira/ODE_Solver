@@ -1,13 +1,3 @@
-DECIMAL_PLACES = 7
-
-def f(x, y):
-    """
-    This here takes the main function.
-    It returns the value of the function.
-    """
-
-    return x + y
-
 def rk4(x, y, h):
     """
     This will compute k1, k2, k3, k4 and k and in the end it returns the value of the next y.
