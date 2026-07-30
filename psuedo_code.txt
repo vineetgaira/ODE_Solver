@@ -1,3 +1,25 @@
-    START:
-        OUTPUT menu
+This file contains the psuedocode that I have written for this program correct or incorrect.
+
+--MENU
+
+START:
+    show_menu()
+    INPUT:
+        user choice
+    IF choice == 1
+        show method menu:
+    IF choice == 2:
+        show comparison b/w numerical methods
+    IF choice == 3:
+        show plot menu
+    IF choice == 4:
+        show method information
+    IF choice == 5:
+        show settings
+    IF choice == 6:
+        show supported operations
+    IF choice == 7:
+        Exit loop
+
+
 
