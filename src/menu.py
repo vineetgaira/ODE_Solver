@@ -6,7 +6,7 @@ from src.ascii_art import banner
 def show_banner():
     print(Fore.LIGHTCYAN_EX + banner)
 
-def show_menu():
+def show_main_menu():
 
     print(Fore.MAGENTA + "=" * 46)
     print(Fore.GREEN + Style.BRIGHT + "             NUMERICAL ODE SOLVER")
@@ -21,7 +21,7 @@ def show_menu():
     print(Fore.WHITE + "  [7] " + Fore.RED + "Exit")
 
 
-def method_menu():
+def show_solver_menu():
     print(Fore.MAGENTA + "=" * 46)
     print(Fore.GREEN + Style.BRIGHT + "           CHOOSE NUMERICAL METHOD")
     print(Fore.MAGENTA + "=" * 46)
@@ -33,7 +33,7 @@ def method_menu():
     print(Fore.WHITE + "  [5] " + Fore.CYAN + "RK2")
     print(Fore.WHITE + "  [6] " + Fore.CYAN + "RK4")
 
-def graph_menu():
+def show_graph_menu():
     print(Fore.MAGENTA + "=" * 26)
     print(Fore.GREEN + Style.BRIGHT + "     Select Plot Type")
     print(Fore.MAGENTA + "=" * 26)
@@ -41,5 +41,15 @@ def graph_menu():
     print(Fore.WHITE + "  [1] " + Fore.CYAN + "Plot numerical solution")
     print(Fore.WHITE + "  [2] " + Fore.CYAN + "Plot exact solution")
     print(Fore.WHITE + "  [3] " + Fore.CYAN + "Plot both")
+
+def show_settings_menu():
+    pass
+
+def show_help_menu():
+    pass
+
+def show_compare_menu():
+    pass
+
 
 
