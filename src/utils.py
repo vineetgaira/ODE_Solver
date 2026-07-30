@@ -1,7 +1,9 @@
 """This is a general helper module to make things easy."""
 
+import os 
+
 def clear_screen():
-    pass
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def pause():
     pass
