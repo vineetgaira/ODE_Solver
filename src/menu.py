@@ -1,9 +1,7 @@
-def menu():
-    print("="*40)
-    print("               ODE SOLVER")
-    print("="*40)
+import colorama 
+from colorama import Fore, Style
+colorama.init(autoreset= True)
+from src.ascii_art import banner
 
-    print("1. Give ODE to solve.")
-    print("2. Select method.")
-    print("3. Exit")
-
+def show_banner():
+    print(Fore.LIGHTCYAN_EX + banner)

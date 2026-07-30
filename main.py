@@ -1,10 +1,10 @@
 """This file will store the main project loop."""
-from src.menu import menu
-from src.input_handler import user_ode
+from src.menu import show_banner
+
 
 def main():
-    menu()
-    user_ode()
+    show_banner()
+    
     
 
 if __name__ =="__main__":
