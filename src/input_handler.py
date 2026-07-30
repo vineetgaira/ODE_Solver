@@ -1,5 +1,21 @@
 """This file handles user input"""
 
+import colorama
+from colorama import Fore
+colorama.init(autoreset= True)
+
+def get_menu_choice():
+    valid_choices = {1, 2, 3, 4, 5, 6, 7}
+    while True:
+        try:
+            choice = int(input(Fore.CYAN + "Choice: "))
+            if choice in valid_choices:
+                return choice 
+            else:
+                print(Fore.RED+"Invalid Choice! Try again.")
+        except ValueError:
+            print(Fore.RED+"Invalid Choice! Try again.")
+
 def get_method():
     pass
 

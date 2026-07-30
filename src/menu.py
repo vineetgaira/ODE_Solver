@@ -43,13 +43,37 @@ def show_graph_menu():
     print(Fore.WHITE + "  [3] " + Fore.CYAN + "Plot both")
 
 def show_settings_menu():
-    pass
+    print(Fore.MAGENTA + "=" * 26)
+    print(Fore.GREEN + Style.BRIGHT + "     Settings")
+    print(Fore.MAGENTA + "=" * 26)
+
+    print(Fore.WHITE + "  [1] " + Fore.CYAN + "Decimal Precision")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Output colour")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Save results automatically")
+    print(Fore.WHITE + "  [4] " + Fore.CYAN + "Graph style")
+    print(Fore.WHITE + "  [5] " + Fore.RED + "Return")
+    
 
 def show_help_menu():
-    pass
+    print(Fore.MAGENTA + "=" * 26)
+    print(Fore.GREEN + Style.BRIGHT + "    Supported Functions")
+    print(Fore.MAGENTA + "=" * 26)
+                    
+    print(Fore.CYAN + "sin(x)")
+    print(Fore.CYAN + "cos(x)")
+    print(Fore.CYAN + "tan(x)")
+    print(Fore.CYAN + "exp(x)")
+    print(Fore.CYAN + "sqrt(x)")
+    print(Fore.CYAN + "log(x)")
+    print(Fore.CYAN + "pi")
+    print(Fore.CYAN + "e")
 
 def show_compare_menu():
-    pass
+    print(Fore.CYAN+"Will be added soon.")
+    pass            
+
+def show_info_menu():
+    show_solver_menu()
 
 
 
