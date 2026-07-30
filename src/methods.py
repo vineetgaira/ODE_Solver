@@ -1,7 +1,10 @@
 "This file stores all the solver methods."
 
-def euler():
-    pass
+from src.input_handler import f
+
+def euler(x, y):
+
+    return y + f(x, y)
 
 def modified_euler():
     pass
