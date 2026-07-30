@@ -22,4 +22,30 @@ START:
         Exit loop
 
 
+How the file structure works : 
+
+           main.py
+              │
+     ┌────────┴─────────┐
+     │                  │
+ menu.py        input_handler.py
+                        │
+                        ▼
+                  validator.py
+                        │
+                        ▼
+                    parser.py
+                        │
+                        ▼
+                    solver.py
+                        │
+                        ▼
+                   methods.py
+                        │
+                Solution History
+              ┌─────────┬───────────┐
+              │         │           │
+         display.py  graph.py  exporter.py
+
+    
 
