@@ -47,5 +47,15 @@ How the file structure works :
               │         │           │
          display.py  graph.py  exporter.py
 
+=========
+ METHODS :
+=========
+Euler
+Modified Euler
+Heun
+Midpoint
+RK2
+RK4
+
     
 

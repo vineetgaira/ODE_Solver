@@ -3,12 +3,19 @@
 from src.input_handler import f
 
 def euler(x, y):
-
-    return y + f(x, y)
-
-def modified_euler():
     pass
 
-def rk4():
+def modified_euler(x, y):
     pass
 
+def heun(x, y):
+    pass
+
+def midpoint(x, y):
+    pass
+
+def rk2(x, y):
+    pass
+
+def rk4(x, y):
+    pass
