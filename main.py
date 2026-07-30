@@ -1,6 +1,6 @@
 """This file will store the main project loop."""
 import time
-from src.menu import show_banner, show_menu, method_menu, graph_menu
+from src.menu import show_banner
 
 
 def main():
