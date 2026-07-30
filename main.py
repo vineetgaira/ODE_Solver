@@ -9,25 +9,26 @@ from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_me
 
 MAIN_MENU={
     1: show_solver_menu,
- 2: show_compare_menu,
- 3: show_graph_menu,
- 4: show_info_menu,
- 5: show_settings_menu,
-  6: show_help_menu
+    2: show_compare_menu,
+    3: show_graph_menu,
+    4: show_info_menu,
+    5: show_settings_menu,
+    6: show_help_menu
 }
 
 
 def main():
     show_banner()
     input() 
-    show_main_menu()
     while True:
+        show_main_menu()
         choice = get_menu_choice()
         if choice == 7:
             print(Fore.CYAN+"Thanks for using.")
             return
         else:
             MAIN_MENU[choice]()
+            input(Fore.CYAN+"Press ENTER to return to the main menu.")
 
 if __name__ =="__main__":
     main()

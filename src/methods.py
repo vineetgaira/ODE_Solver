@@ -8,9 +8,6 @@ def euler(x, y):
 def modified_euler(x, y):
     pass
 
-def heun(x, y):
-    pass
-
 def midpoint(x, y):
     pass
 

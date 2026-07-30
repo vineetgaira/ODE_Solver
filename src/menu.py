@@ -27,11 +27,10 @@ def show_solver_menu():
     print(Fore.MAGENTA + "=" * 46)
 
     print(Fore.WHITE + "  [1] " + Fore.CYAN + "Euler Method")
-    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Modified Euler Method")
-    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Heun Method")
-    print(Fore.WHITE + "  [4] " + Fore.CYAN + "Midpoint Method")
-    print(Fore.WHITE + "  [5] " + Fore.CYAN + "RK2")
-    print(Fore.WHITE + "  [6] " + Fore.CYAN + "RK4")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Modified Euler Method/Heun")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Midpoint Method")
+    print(Fore.WHITE + "  [4] " + Fore.CYAN + "RK2")
+    print(Fore.WHITE + "  [5] " + Fore.CYAN + "RK4")
 
 def show_graph_menu():
     print(Fore.MAGENTA + "=" * 26)
