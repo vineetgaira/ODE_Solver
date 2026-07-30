@@ -3,8 +3,8 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset= True)
 
-import time
-from src.input_handler import get_menu_choice
+from src.utils import clear_screen
+from src.input_handler import get_menu_choice, get_method
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
 
 MAIN_MENU={
@@ -20,15 +20,20 @@ MAIN_MENU={
 def main():
     show_banner()
     input() 
+    clear_screen()
     while True:
         show_main_menu()
         choice = get_menu_choice()
         if choice == 7:
-            print(Fore.CYAN+"Thanks for using.")
+            print(Fore.LIGHTCYAN_EX+"Thanks for using.")
             return
         else:
             MAIN_MENU[choice]()
-            input(Fore.CYAN+"Press ENTER to return to the main menu.")
+            if MAIN_MENU[1]:
+                get_method()
+            input(Fore.LIGHTCYAN_EX+"Press ENTER to return to the main menu.")
+
+
 
 if __name__ =="__main__":
     main()
