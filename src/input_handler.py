@@ -16,24 +16,45 @@ def get_menu_choice(options: dict, prompt: str):
         except ValueError:
             print(Fore.RED+"Invalid Choice! Try again.")
 
-
 def get_equation():
-    pass
+    
+    equation = input("Equation (dy/dx = )")
+    return equation 
 
 def get_initial_x():
-    pass
+    while True:
+        try:
+            initial_x = float(input("Initial x (x₀) : "))
+            if initial_x > 0:
+                return initial_x
+            else:
+                print("Invalid value! Must be greater than 0.")
+        except ValueError:
+            print("Invalid value! Must be a number.")
 
 def get_initial_y():
-    pass
+
+    initial_y = float(input("Initial y (y₀) : "))
+
+    return initial_y   
 
 def get_target_x():
-    pass
+     
+    target_x = float(input("Target x : "))
+
+    return  target_x
 
 def get_step_size():
-    pass
+
+    step_size = float(input("Step size (h) : "))
+
+    return step_size  
 
 def get_exact_solution():
-    pass
+
+    exact_solution = float(input("Please enter the exact solution : "))
+
+    return exact_solution
 
 def confirm_continue():
     pass

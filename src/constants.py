@@ -22,11 +22,9 @@ METHODS_MENU = {
 
 COMPARE_MENU = {
     1: "all",
-    2: "select",
+    2: "exact",
     3: "step_size",
-    4: "solutions",
-    5: "previous",
-    6: "back"
+    4: "back"
   
 }
 
@@ -44,3 +42,4 @@ SETTINGS = {
     5: "return"
     
 }
+
