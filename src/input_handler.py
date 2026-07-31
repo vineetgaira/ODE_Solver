@@ -21,63 +21,22 @@ def get_equation():
     equation = input("Equation (dy/dx = )")
     return equation 
 
-def get_initial_x():
+def get_valid_float(prompt, is_valid, error_message):
     while True:
         try:
-            initial_x = float(input("Initial x (x₀) : "))
-            if initial_x != 0:
-                return initial_x
+            value = float(input(prompt))
+            if is_valid(value):
+                return value
             else:
-                print("Invalid value! Must be a non-zero value.")
+                print(error_message)
         except ValueError:
             print("Invalid value! Must be a number.")
 
-def get_initial_y():
-
-    while True:
-        try:
-            initial_y = float(input("Initial y (y₀) : "))
-            if initial_y != 0:
-                return initial_y
-            else:
-                print("Invalid value! Must be a non-zero value.")
-        except ValueError:
-            print("Invalid value! Must be a number.")
-  
-
-def get_target_x():
-    while True:
-        try:
-            target_x = float(input("Target x : "))
-            if target_x != 0:
-                return target_x
-            else:
-                print("Invalid value! Must be a non-zero value.")
-        except ValueError:
-            print("Invalid value! Must be a number.")
-
-def get_step_size():
-    while True:
-        try:
-            step_size = float(input("Step size (h) : "))
-            if step_size > 0:
-                return step_size
-            else:
-                print("Invalid value! Must be greater than 0.")
-        except ValueError:
-            print("Invalid value! Must be a number.")
-
-def get_exact_solution():
-    while True:
-        try:
-            exact_solution = float(input("Enter the exact solutin : "))
-            if exact_solution != 0:
-                return exact_solution
-            else:
-                print("Invalid value! Must be a non-zero value.")
-        except ValueError:
-            print("Invalid value! Must be a number.")
-
+initial_x = get_valid_float("Initial x (x₀) : ", lambda v: v != 0, "Invalid value! Must not be 0.")
+initial_y = get_valid_float("Initial y (y₀) : ", lambda v: v != 0, "Invalid value! Must not be 0.")
+target_x = get_valid_float("Target x : ", lambda v: v != 0, "Invalid value! Must not be 0.")
+step_size = get_valid_float("Step size (h) : ", lambda v: v > 0, "Invalid value! Must be greater than 0.")
+exact_solution = get_valid_float("Enter the exact solution : ", lambda v: v != 0, "Invalid value! Must not be 0.")
 
 def all_initial_values(equation, initial_x, initial_y, target_x, step_size):
 
