@@ -2,7 +2,7 @@
 
 import colorama
 from colorama import Fore
-colorama.init(autoreset= True)
+colorama.init(autoreset=True)
 
 def get_menu_choice(options: dict, prompt: str):
     valid_choices = set(options.keys())
@@ -10,47 +10,57 @@ def get_menu_choice(options: dict, prompt: str):
         try:
             choice = int(input(Fore.LIGHTCYAN_EX + prompt))
             if choice in valid_choices:
-                return options[choice ]
+                return options[choice]
             else:
-                print(Fore.RED+"Invalid Choice! Try again.")
+                print(Fore.RED + "Invalid Choice! Try again.")
         except ValueError:
-            print(Fore.RED+"Invalid Choice! Try again.")
+            print(Fore.RED + "Invalid Choice! Try again.")
 
 def get_equation():
-    
-    equation = input("Equation (dy/dx = ) : ")
-    return equation 
+    while True:
+        equation = input(...)
 
-def get_valid_float(prompt, is_valid, error_message):
+        if equation.strip():
+            return equation
+
+        print(Fore.RED + "Please enter a valid equation.")
+
+    
+
+def get_valid_float(prompt, is_valid=lambda v: True, error_message="Invalid value! Must be a number."):
     while True:
         try:
-            value = float(input(prompt))
+            value = float(input(Fore.LIGHTCYAN_EX + prompt))
             if is_valid(value):
                 return value
             else:
-                print(error_message)
+                print(Fore.RED + error_message)
         except ValueError:
-            print("Invalid value! Must be a number.")
+            print(Fore.RED + "Invalid value! Must be a number.")
 
-def all_initial_values(equation, initial_x, initial_y, target_x, step_size, exact_solution):
+def collect_initial_values(equation, initial_x, initial_y, target_x, step_size, exact_solution):
 
-    values = {
+    return {
     "equation": equation,
     "x0": initial_x,
     "y0": initial_y,
     "target_x": target_x,
     "step_size": step_size,
-    "exact_solution": exact_solution
+    "exact_solution": exact_solution,
     }
 
-    return values
+    
+def get_all_inputs():
+    equation = get_equation()
+    initial_x = get_valid_float("Initial x (x₀) : ")
+    initial_y = get_valid_float("Initial y (y₀) : ")
+    target_x = get_valid_float("Target x : ")
+    exact_solution = get_valid_float("Enter the exact solution : ")
 
+    step_size = get_valid_float(
+        "Step size (h) : ",
+        lambda v: v > 0,
+        "Invalid value! Must be greater than 0."
+    )
 
-# initial_x = get_valid_float("Initial x (x₀) : ", lambda v: v != 0, "Invalid value! Must not be 0.")
-# initial_y = get_valid_float("Initial y (y₀) : ", lambda v: v != 0, "Invalid value! Must not be 0.")
-# target_x = get_valid_float("Target x : ", lambda v: v != 0, "Invalid value! Must not be 0.")
-# step_size = get_valid_float("Step size (h) : ", lambda v: v > 0, "Invalid value! Must be greater than 0.")
-# exact_solution = get_valid_float("Enter the exact solution : ", lambda v: v != 0, "Invalid value! Must not be 0.")
-
-
-
+    return collect_initial_values(equation, initial_x, initial_y, target_x, step_size, exact_solution)
