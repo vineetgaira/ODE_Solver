@@ -18,7 +18,7 @@ def get_menu_choice(options: dict, prompt: str):
 
 def get_equation():
     
-    equation = input("Equation (dy/dx = )")
+    equation = input("Equation (dy/dx = ) : ")
     return equation 
 
 def get_valid_float(prompt, is_valid, error_message):
