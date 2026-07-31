@@ -34,27 +34,49 @@ def get_initial_x():
 
 def get_initial_y():
 
-    initial_y = float(input("Initial y (y₀) : "))
-
-    return initial_y   
+    while True:
+        try:
+            initial_y = float(input("Initial y (y₀) : "))
+            if initial_y > 0:
+                return initial_y
+            else:
+                print("Invalid value! Must be greater than 0.")
+        except ValueError:
+            print("Invalid value! Must be a number.")
+  
 
 def get_target_x():
-     
-    target_x = float(input("Target x : "))
-
-    return  target_x
+    while True:
+        try:
+            target_x = float(input("Target x : "))
+            if target_x > 0:
+                return target_x
+            else:
+                print("Invalid value! Must be greater than 0.")
+        except ValueError:
+            print("Invalid value! Must be a number.")
 
 def get_step_size():
-
-    step_size = float(input("Step size (h) : "))
-
-    return step_size  
+    while True:
+        try:
+            step_size = float(input("Step size (h) : "))
+            if step_size > 0:
+                return step_size
+            else:
+                print("Invalid value! Must be greater than 0.")
+        except ValueError:
+            print("Invalid value! Must be a number.")
 
 def get_exact_solution():
-
-    exact_solution = float(input("Please enter the exact solution : "))
-
-    return exact_solution
+    while True:
+        try:
+            exact_solution = float(input("Enter the exact solutin : "))
+            if exact_solution > 0:
+                return exact_solution
+            else:
+                print("Invalid value! Must be greater than 0.")
+        except ValueError:
+            print("Invalid value! Must be a number.")
 
 def confirm_continue():
     pass
