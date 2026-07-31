@@ -28,7 +28,7 @@ def get_initial_x():
             if initial_x != 0:
                 return initial_x
             else:
-                print("Invalid value! Must be greater than 0.")
+                print("Invalid value! Must be a non-zero value.")
         except ValueError:
             print("Invalid value! Must be a number.")
 
@@ -40,7 +40,7 @@ def get_initial_y():
             if initial_y != 0:
                 return initial_y
             else:
-                print("Invalid value! Must be greater than 0.")
+                print("Invalid value! Must be a non-zero value.")
         except ValueError:
             print("Invalid value! Must be a number.")
   
@@ -52,7 +52,7 @@ def get_target_x():
             if target_x != 0:
                 return target_x
             else:
-                print("Invalid value! Must be greater than 0.")
+                print("Invalid value! Must be a non-zero value.")
         except ValueError:
             print("Invalid value! Must be a number.")
 
@@ -74,7 +74,7 @@ def get_exact_solution():
             if exact_solution != 0:
                 return exact_solution
             else:
-                print("Invalid value! Must be greater than 0.")
+                print("Invalid value! Must be a non-zero value.")
         except ValueError:
             print("Invalid value! Must be a number.")
 

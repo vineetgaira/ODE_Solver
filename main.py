@@ -44,9 +44,5 @@ def main():
             print(Fore.LIGHTCYAN_EX+ "Thanks for using.")
             return
 
-
-        
-
-
 if __name__ =="__main__":
     main()
