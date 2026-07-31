@@ -3,36 +3,49 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset= True)
 
+from src.constants import MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS, COMPARE_MENU
 from src.utils import clear_screen
-from src.input_handler import get_menu_choice, get_method
+from src.input_handler import get_menu_choice
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
 
-MAIN_MENU={
-    1: show_solver_menu,
-    2: show_compare_menu,
-    3: show_graph_menu,
-    4: show_info_menu,
-    5: show_settings_menu,
-    6: show_help_menu
-}
-
-
+prompt = "Choice :"
 def main():
     show_banner()
     input() 
     clear_screen()
     while True:
         show_main_menu()
-        choice = get_menu_choice()
-        if choice == 7:
-            print(Fore.LIGHTCYAN_EX+"Thanks for using.")
+        choice = get_menu_choice(MAIN_MENU, prompt)
+        if choice == "solve":
+            show_solver_menu()
+            get_menu_choice(METHODS_MENU, prompt)
+            clear_screen()
+        elif choice == "compare":
+            show_compare_menu()
+            get_menu_choice(COMPARE_MENU, prompt)
+            clear_screen()
+        elif choice == "plot":
+            show_graph_menu()
+            get_menu_choice(PLOT_MENU, prompt)
+            clear_screen()
+        elif choice == "info":
+            show_info_menu()
+            get_menu_choice(METHODS_MENU, prompt)
+            clear_screen()
+        elif choice == "settings":
+            show_settings_menu()
+            get_menu_choice(SETTINGS, prompt)
+            clear_screen()
+        elif choice == "help":
+            show_help_menu()
+            input(Fore.LIGHTCYAN_EX+"<<< Press ENTER to return >>>")
+            clear_screen()
+        elif choice == "exit":
+            print(Fore.LIGHTCYAN_EX+ "Thanks for using.")
             return
-        else:
-            MAIN_MENU[choice]()
-            if MAIN_MENU[1]:
-                get_method()
-            input(Fore.LIGHTCYAN_EX+"Press ENTER to return to the main menu.")
 
+
+        
 
 
 if __name__ =="__main__":

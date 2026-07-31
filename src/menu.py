@@ -68,11 +68,28 @@ def show_help_menu():
     print(Fore.LIGHTCYAN_EX + "e")
 
 def show_compare_menu():
-    print(Fore.LIGHTCYAN_EX+"Will be added soon.")
-    pass            
+    print(Fore.MAGENTA + "=" * 46)
+    print(Fore.GREEN + Style.BRIGHT + "        COMPARE METHODS")
+    print(Fore.MAGENTA + "=" * 46)
+
+    print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Compare All Methods")
+    print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Select Methods to Compare")
+    print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Compare Different Step Sizes")
+    print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Compare With Exact Solution")
+    print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "View Previous Comparison")
+    print(Fore.WHITE + "  [6] " + Fore.LIGHTCYAN_EX + "Back")
 
 def show_info_menu():
-    show_solver_menu()
+    print(Fore.MAGENTA + "=" * 46)
+    print(Fore.GREEN + Style.BRIGHT + "     CHOOSE NUMERICAL METHOD TO GET INFO")
+    print(Fore.MAGENTA + "=" * 46)
+
+    print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Euler Method")
+    print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Modified Euler Method/Heun")
+    print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Midpoint Method")
+    print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "RK2")
+    print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "RK4")
+
 
 
 

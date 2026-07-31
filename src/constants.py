@@ -2,10 +2,45 @@
 
 PROGRAM_NAME = "Numerical ODE sovler"
 
-VERSION = 0.1
+MAIN_MENU = {
+    1: "solve",
+    2: "compare",
+    3: "plot",
+    4: "info",
+    5: "settings",
+    6: "help",
+    7: "exit"
+}
 
-LINE_LENGTH = 1
+METHODS_MENU = {
+    1: "euler",
+    2: "heun",
+    3: "midpoint",
+    4: "rk2",
+    5: "rk4"
+}
 
-SUPPORTED_FUNCTIONS =3
+COMPARE_MENU = {
+    1: "all",
+    2: "select",
+    3: "step_size",
+    4: "solutions",
+    5: "previous",
+    6: "back"
+  
+}
 
-DEFAULT_PRECISION = 4
+PLOT_MENU = {
+    1: "numerical",
+    2: "exact",
+    3: "both"
+}
+
+SETTINGS = {
+    1: "precision",
+    2: "colour",
+    3: "save_res",
+    4: "graph_style",
+    5: "return"
+    
+}
