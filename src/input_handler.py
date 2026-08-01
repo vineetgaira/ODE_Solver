@@ -18,7 +18,7 @@ def get_menu_choice(options: dict, prompt: str):
 
 def get_equation():
     while True:
-        equation = input(...)
+        equation = input("Equation (dy/dx = ) : ")
 
         if equation.strip():
             return equation

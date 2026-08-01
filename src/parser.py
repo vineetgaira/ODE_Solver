@@ -2,8 +2,9 @@
 
 from sympy import symbols, sympify 
 
-def parse_equation():
+def parse_equation(equation):
     pass
+
 
 def create_function():
     pass
