@@ -1,9 +1,11 @@
 "This file stores all the solver methods."
 
-from src.input_handler import f
+from src.parser import parse_equation
 
-def euler(x, y):
-    pass
+
+def euler(x, y, h, equation):
+
+    return y + h(equation)
 
 def modified_euler(x, y):
     pass
