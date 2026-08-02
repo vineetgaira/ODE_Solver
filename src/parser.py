@@ -22,3 +22,9 @@ def is_valid_charset(eq: str) -> bool:
         return False
     return set(eq.replace(' ', '')) <= (ALLOWED_CHARS | set(''.join(ALLOWED_WORDS)))
 
+def safe_parse(eq):
+
+    local_dict = {'x': x, 'y': y}
+
+    return parse_expr(eq,  local_dict=local_dict, transformations=TRANSFORMS)
+
