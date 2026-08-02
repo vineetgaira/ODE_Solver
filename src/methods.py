@@ -7,7 +7,7 @@ def euler(x, y, h, equation):
 
     return y + h(equation)
 
-def modified_euler(x, y):
+def modified_euler():
     pass
 
 def midpoint(x, y):
