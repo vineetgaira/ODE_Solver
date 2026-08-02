@@ -28,3 +28,8 @@ def safe_parse(eq):
 
     return parse_expr(eq,  local_dict=local_dict, transformations=TRANSFORMS)
 
+def has_valid_symbols(expr) -> bool:
+    allowed = {x, y}
+    found = expr.free_symbols
+    return len(found) > 0 and found <= allowed
+
