@@ -33,3 +33,18 @@ def has_valid_symbols(expr) -> bool:
     found = expr.free_symbols
     return len(found) > 0 and found <= allowed
 
+def get_equation():
+    while True:
+        raw = input('Equation (dy/dx = ) : ')
+        if not is_valid_charset(raw):
+            print('Invalid characters! Use only x, y, numbers and + - * / ^ ( )')
+            continue
+        try:
+            expr = safe_parse(raw)
+        except (SympifyError, TypeError, SyntaxError):
+            print('Could not parse that expression. Check your parentheses and operators.')
+            continue
+        if not has_valid_symbols(expr):
+            print('Equation must use only x and y, and cannot be a constant.')
+            continue
+        return expr
