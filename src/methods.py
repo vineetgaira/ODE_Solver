@@ -19,8 +19,20 @@ def modified_euler(equation, x0, y0, y_1_o, h):
 def midpoint(x, y):
     pass
 
-def rk2(x, y):
+def rk4(equation, x0, y0, h):
     pass
+    k1 = h*f(equation, x0, y0)
+    k2 = h*f(equation, x0 + h/2 , y0 + k1/2)
+    k3 = h*f(equation, x0 + h/2 , y0 + k2/2)
+    k4 = h*f(equation, x0 + h, y0 + k3)
 
-def rk4(x, y):
-    pass
+    k = (k1 + 2*k2 + 2*k3 + k4)/6
+
+    y1 = y0 + k
+
+    return {"k1": k1,
+            "k2": k2,
+            "k3": k3,
+            "k4": k4,
+            "k": k,
+            "y1": y1}
