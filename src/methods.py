@@ -16,11 +16,7 @@ def modified_euler(equation, x0, y0, y_1_o, h):
 
     return x_one, y_1_1
 
-def midpoint(x, y):
-    pass
-
-def rk2(equation, x0, y0, h):
-
+def midpoint(equation, x0, y0, h):
     k1 = h*f(equation, x0, y0)
     k2 = h*f(equation, x0 + h/2 , y0 + k1/2)
 
@@ -30,6 +26,17 @@ def rk2(equation, x0, y0, h):
             "k2": k2,
             "y1": y1}
 
+
+def rk2(equation, x0, y0, h, a, b, c1, c2):
+
+    x1 = x0 + h
+    
+    k1 = f(equation, x0, y0)
+    k2 = f(equation, x0 + a*h, y0 + b*h*k1)
+
+    y1 = y0 + h*(c1*k1 + c2*k2)
+
+    return x1, y1
 
 def rk4(equation, x0, y0, h):
     pass
@@ -48,3 +55,9 @@ def rk4(equation, x0, y0, h):
             "k4": k4,
             "k": k,
             "y1": y1}
+
+# rk2_family= {
+#     "heun":rk2 (equation, x0, y0, h, 1, 1, 1/2, 1/2),
+#     "midpoint":rk2(equation, x0, y0, h, 1/2, 1/2, 0, 1),
+#     "raltson":rk2(equation, x0, y0, h, 2/3, 2/3, 1/4, 3/4)
+# }

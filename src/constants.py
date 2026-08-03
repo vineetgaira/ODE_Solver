@@ -88,6 +88,44 @@ METHOD_INFO = {
             "method, this evaluates the slope at the midpoint of the "
             "interval, using a half-step Euler prediction to get there. Same "
             "order of accuracy as Heun's method, but with a different error "
-            "constant — the two aren't")
-        }       
-    }
+            "constant — the two aren't numerically identical even at "
+            "matching step sizes."
+        ),
+    },
+
+    "rk2": {
+        "name": "RK2 (General Second-Order Runge-Kutta)",
+        "formula": (
+            "k1 = f(x(n), y(n))\n"
+            "k2 = f(x(n) + alpha*h, y(n) + alpha*h*k1)\n"
+            "y(n+1) = y(n) + h * [(1 - beta)*k1 + beta*k2], where beta = 1 / (2*alpha)"
+        ),
+        "order": "2nd order — Global error O(h^2), for any valid alpha in (0, 1]",
+        "description": (
+            "The general family of second-order Runge-Kutta methods, "
+            "parameterized by alpha (where the second slope is sampled). "
+            "Heun's method and the Midpoint method are both specific cases: "
+            "alpha = 1 gives Heun's method (weights 1/2, 1/2), and "
+            "alpha = 1/2 gives the Midpoint method (weights 0, 1)."
+        ),
+    },
+
+    "rk4": {
+        "name": "RK4 (Classical Runge-Kutta)",
+        "formula": (
+            "k1 = f(x(n), y(n))\n"
+            "k2 = f(x(n) + h/2, y(n) + (h/2)*k1)\n"
+            "k3 = f(x(n) + h/2, y(n) + (h/2)*k2)\n"
+            "k4 = f(x(n) + h, y(n) + h*k3)\n"
+            "y(n+1) = y(n) + (h/6) * (k1 + 2*k2 + 2*k3 + k4)"
+        ),
+        "order": "4th order — Global error O(h^4)",
+        "description": (
+            "The classical Runge-Kutta method and the standard default ODE "
+            "solver for most practical use. Uses four slope evaluations per "
+            "step, weighted to cancel out lower-order error terms. Doubling "
+            "the number of steps roughly divides error by 16, making it the "
+            "best accuracy-to-cost tradeoff among these five methods."
+        ),
+    },
+}
