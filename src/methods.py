@@ -5,8 +5,10 @@ def euler(y , h, eq_value):
 
     return y + h(eq_value)
 
-def modified_euler():
-    pass
+def modified_euler(y0, x0, h, euler_value, ):
+
+    return y0 + h[euler_value, ]
+   
 
 def midpoint(x, y):
     pass
