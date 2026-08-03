@@ -1,13 +1,9 @@
 "This file stores all the solver methods."
 
 
+def euler(y , h, eq_value):
 
-def f(equation, x0, y0):
-    pass
-
-def euler(x, y, h, equation):
-
-    return y + h(equation)
+    return y + h(eq_value)
 
 def modified_euler():
     pass
