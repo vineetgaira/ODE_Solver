@@ -3,6 +3,7 @@
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
+from src.parser import get_equation
 
 def get_menu_choice(options: dict, prompt: str):
     valid_choices = set(options.keys())
@@ -15,17 +16,6 @@ def get_menu_choice(options: dict, prompt: str):
                 print(Fore.RED + "Invalid Choice! Try again.")
         except ValueError:
             print(Fore.RED + "Invalid Choice! Try again.")
-
-def get_equation():
-    while True:
-        equation = input("Equation (dy/dx = ) : ")
-
-        if equation.strip():
-            return equation
-
-        print(Fore.RED + "Please enter a valid equation.")
-
-    
 
 def get_valid_float(prompt, is_valid=lambda v: True, error_message="Invalid value! Must be a number."):
     while True:

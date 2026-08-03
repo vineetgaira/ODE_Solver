@@ -1,11 +1,10 @@
-"This file stores all the solver methods."
-
+"This file stores all the solver methods."\
 
 def euler(y , h, eq_value):
 
     return y + h(eq_value)
 
-def modified_euler(y0, x0, h, euler_value, ):
+def modified_euler(y0, h, euler_value, ):
 
     return y0 + h[euler_value, ]
    

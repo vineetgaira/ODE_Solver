@@ -9,7 +9,7 @@ TRANSFORMS = standard_transformations + (
 implicit_multiplication_application, convert_xor
 )
 
-ALLOWED_CHARS = set('xy0123456789+-*/.^ ')
+ALLOWED_CHARS = set('xy0123456789+-*/.^() ')
 ALLOWED_WORDS = {'sin', 'cos', 'tan', 'exp', 'log','pi', 'sqrt', 'e' }
 
 x, y = symbols('x y')
@@ -49,8 +49,7 @@ def get_equation():
             continue
         return expr
 
-def f(x0, y0):
+def f(equation, x0, y0):
     # Okay so this will solve it with initital values 
     # for example f(x, y) = x + y where x = 0, y = 2 the value will bet 0 + 2 = 2
-    equation = get_equation()
     return equation.subs({x: x0, y: y0})
