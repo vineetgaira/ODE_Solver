@@ -5,7 +5,7 @@ import os
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def pause():
+def pause():    
     pass
 
 def format_number():

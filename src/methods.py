@@ -1,7 +1,9 @@
 "This file stores all the solver methods."
 
-from src.parser import parse_equation
 
+
+def f(equation, x0, y0):
+    pass
 
 def euler(x, y, h, equation):
 

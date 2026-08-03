@@ -7,6 +7,7 @@ from src.constants import MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS, COMPARE_
 from src.utils import clear_screen
 from src.input_handler import get_menu_choice
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
+from src.parser import get_equation
 
 prompt = "Choice :"
 def main():
@@ -43,6 +44,8 @@ def main():
         elif choice == "exit":
             print(Fore.LIGHTCYAN_EX+ "Thanks for using.")
             return
+    
+
 
 if __name__ =="__main__":
     main()
