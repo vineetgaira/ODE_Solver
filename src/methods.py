@@ -1,8 +1,12 @@
 "This file stores all the solver methods."\
 
-def euler(y , h, eq_value):
+from src.parser import f
 
-    return y + h(eq_value)
+def euler(equation, x0, y0, h):
+    slope = f(equation, x0, y0)
+    x1 = x0 + h
+    y1 = y0 + h * slope
+    return x1, y1
 
 def modified_euler(y0, h, euler_value, ):
 
