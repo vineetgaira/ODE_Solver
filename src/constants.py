@@ -43,3 +43,51 @@ SETTINGS = {
     
 }
 
+METHOD_INFO = {
+    "euler": {
+        "name": "Euler Method",
+        "formula": "y(n+1) = y(n) + h * f(x(n), y(n))",
+        "order": "1st order — Global error O(h)",
+        "description": (
+            "The simplest numerical method for solving ODEs. It uses the slope "
+            "at the current point (x(n), y(n)) to step forward, assuming the "
+            "slope stays constant over the interval. Only one function "
+            "evaluation per step, but error accumulates quickly since it "
+            "ignores curvature in the solution. Good as a baseline to compare "
+            "against higher-order methods."
+        ),
+    },
+
+    "heun": {
+        "name": "Modified Euler / Heun's Method",
+        "formula": (
+            "predictor: y~(n+1) = y(n) + h * f(x(n), y(n))\n"
+            "corrector: y(n+1) = y(n) + (h/2) * [f(x(n), y(n)) + f(x(n+1), y~(n+1))]"
+        ),
+        "order": "2nd order — Global error O(h^2)",
+        "description": (
+            "A predictor-corrector method. It first predicts the next point "
+            "using standard Euler, then corrects the estimate by averaging "
+            "the slope at the start and the (predicted) end of the interval. "
+            "Equivalent to applying the trapezoidal rule to the ODE. More "
+            "accurate than Euler at the cost of one extra function evaluation "
+            "per step."
+        ),
+    },
+
+    "midpoint": {
+        "name": "Midpoint Method",
+        "formula": (
+            "k1 = f(x(n), y(n))\n"
+            "k2 = f(x(n) + h/2, y(n) + (h/2) * k1)\n"
+            "y(n+1) = y(n) + h * k2"
+        ),
+        "order": "2nd order — Global error O(h^2)",
+        "description": (
+            "Instead of averaging the slopes at both endpoints like Heun's "
+            "method, this evaluates the slope at the midpoint of the "
+            "interval, using a half-step Euler prediction to get there. Same "
+            "order of accuracy as Heun's method, but with a different error "
+            "constant — the two aren't")
+        }       
+    }
