@@ -52,9 +52,9 @@ How the file structure works :
 =========
 Euler
 Modified Euler
-Heun
-Midpoint
-RK2
+Heun ------------- \
+Midpoint------------> RK2
+Ralston----------- /
 RK4
 
     

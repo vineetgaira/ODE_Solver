@@ -19,6 +19,19 @@ def rk2(equation, x0, y0, h, alpha, beta, c1, c2):
 
     return x1, y1
 
+def heun(equation, x0, y0, h):
+   
+   return rk2(equation, x0, y0, h, alpha = 1, beta = 1, c1 = 1/2, c2 = 1/2)
+
+def midpoint(equation, x0, y0, h):
+
+    return rk2(equation, x0, y0, h, alpha = 1/2, beta = 1/2, c1 = 0, c2 = 1)
+
+def ralston(equation, x0, y0, h):
+
+    return rk2(equation, x0, y0, h, alpha=2/3, beta=2/3, c1=1/4, c2=3/4)
+
+
 def rk4(equation, x0, y0, h):
 
     x1 = x0 + h
