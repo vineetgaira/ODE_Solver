@@ -16,7 +16,7 @@ METHODS_MENU = {
     1: "euler",
     2: "heun",
     3: "midpoint",
-    4: "rk2",
+    4: "ralston",
     5: "rk4"
 }
 
