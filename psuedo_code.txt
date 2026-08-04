@@ -59,3 +59,29 @@ RK4
 
     
 
+Sovler:
+    Which method to pick is the solvers job
+    We have a METHODS_REGISTRY dict:
+        METHODS_REGISTRY= {"euler": euler,
+    "heun": heun,
+    "midpoint": midpoint,
+    "raltson": ralston,
+    "rk4": rk4
+}
+
+    it stores the name and function.
+    Now the things we need to execute a method individually:
+        method_name(equation, x0, y0, h)
+    
+    so what the solver will look like:
+        def solve_with_method(method_name, equation, x0, y0, target_x, h):
+        method_fn = METHODS_REGISTRY[method_name]
+        history = [(x0, y0)]
+        n_steps = round((target_x - x0)/h)
+        for i in range(n_steps):
+            x0, y0 = method_fn(equation, x0, y0, h)
+            history.append((x0, y0))
+        return history
+
+
+    
