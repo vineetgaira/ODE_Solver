@@ -85,7 +85,7 @@ def show_info_menu():
     print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Euler Method")
     print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Modified Euler Method/Heun")
     print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Midpoint Method")
-    print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Rk2")
+    print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Ralston")
     print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "RK4")
 
 

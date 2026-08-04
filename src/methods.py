@@ -27,12 +27,12 @@ def midpoint(equation, x0, y0, h):
             "y1": y1}
 
 
-def rk2(equation, x0, y0, h, a, b, c1, c2):
+def rk2(equation, x0, y0, h, alpha, beta, c1, c2):
 
     x1 = x0 + h
     
     k1 = f(equation, x0, y0)
-    k2 = f(equation, x0 + a*h, y0 + b*h*k1)
+    k2 = f(equation, x0 + alpha*h, y0 + beta*h*k1)
 
     y1 = y0 + h*(c1*k1 + c2*k2)
 
@@ -57,7 +57,7 @@ def rk4(equation, x0, y0, h):
             "y1": y1}
 
 # rk2_family= {
-#     "heun":rk2 (equation, x0, y0, h, 1, 1, 1/2, 1/2),
-#     "midpoint":rk2(equation, x0, y0, h, 1/2, 1/2, 0, 1),
-#     "raltson":rk2(equation, x0, y0, h, 2/3, 2/3, 1/4, 3/4)
+#     "heun": rk2(equation, x0, y0, h, alpha = 1, beta = 1, c1 = 1/2, c2 = 1/2),
+#     "midpoint": rk2(equation, x0, y0, h, alpha = 1/2, beta = 1/2, c1 = 0, c2 = 1),
+#     "raltson": rk2(equation, x0, y0, h, alpha = 2/3, beta = 2/3, c1 = 1/4, c2 = 3/4)
 # }
