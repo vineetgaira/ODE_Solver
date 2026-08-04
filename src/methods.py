@@ -8,25 +8,6 @@ def euler(equation, x0, y0, h):
     y1 = y0 + h * slope
     return x1, y1
 
-def modified_euler(equation, x0, y0, y_1_o, h):
-    x_one = x0 + h
-    f1 = f(equation, x0, y0)
-    f2 =  f(equation, x_one, y_1_o)
-    y_1_1 = y0 + h/2*( f1 + f2)
-
-    return x_one, y_1_1
-
-def midpoint(equation, x0, y0, h):
-    k1 = h*f(equation, x0, y0)
-    k2 = h*f(equation, x0 + h/2 , y0 + k1/2)
-
-    y1 = y0 + k2
-
-    return {"k1": k1,
-            "k2": k2,
-            "y1": y1}
-
-
 def rk2(equation, x0, y0, h, alpha, beta, c1, c2):
 
     x1 = x0 + h
@@ -56,8 +37,9 @@ def rk4(equation, x0, y0, h):
             "k": k,
             "y1": y1}
 
-# rk2_family= {
+# methods = {"euler": euler(equation, x0, y0, h),
 #     "heun": rk2(equation, x0, y0, h, alpha = 1, beta = 1, c1 = 1/2, c2 = 1/2),
 #     "midpoint": rk2(equation, x0, y0, h, alpha = 1/2, beta = 1/2, c1 = 0, c2 = 1),
-#     "raltson": rk2(equation, x0, y0, h, alpha = 2/3, beta = 2/3, c1 = 1/4, c2 = 3/4)
+#     "raltson": rk2(equation, x0, y0, h, alpha = 2/3, beta = 2/3, c1 = 1/4, c2 = 3/4),
+#     "rk4": rk4(equation, x0, y0, h)
 # }
