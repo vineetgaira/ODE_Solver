@@ -18,5 +18,8 @@ def solve_with_method(method_name, equation, x0, y0, target_x, h):
         history.append((round(x0, 5), round(y0, 5)))
     return history
     
-def compare_methods():
-    pass
+def compare_methods(equation, x0, y0, target_x, h):
+    return {
+        name :solve_with_method(name, equation, x0, y0, target_x, h)
+        for name in METHODS_REGISTRY
+    }
