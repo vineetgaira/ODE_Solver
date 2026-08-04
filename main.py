@@ -18,9 +18,9 @@ def main():
         show_main_menu()
         choice = get_menu_choice(MAIN_MENU, prompt)
         if choice == "solve":
-            show_solver_menu()
-            get_menu_choice(METHODS_MENU, prompt)
             initial_values = get_all_inputs()
+            show_solver_menu()
+            method = get_menu_choice(METHODS_MENU, prompt)
             clear_screen()
         elif choice == "compare":
             show_compare_menu()
