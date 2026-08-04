@@ -1,6 +1,7 @@
 
 """This one's job is which algorithm to run ."""
 from src.methods import euler, heun, midpoint, ralston, rk4
+from src.constants import DECIMAL_PRECISION
 
 METHODS_REGISTRY= {"euler": euler,
     "heun": heun,
@@ -15,7 +16,7 @@ def solve_with_method(method_name, equation, x0, y0, target_x, h):
     n_steps = round((target_x - x0)/h)
     for i in range(n_steps):
         x0, y0 = method_fn(equation, x0, y0, h)
-        history.append((round(x0, 5), round(y0, 5)))
+        history.append((round(x0, DECIMAL_PRECISION), round(y0, DECIMAL_PRECISION)))
     return history
     
 def compare_methods(equation, x0, y0, target_x, h):

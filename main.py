@@ -8,7 +8,7 @@ from src.solver import solve_with_method, compare_methods
 from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
-from src.display import display_history
+from src.display import display_history, display_method_information
 
 
 
@@ -39,7 +39,9 @@ def main():
             clear_screen()
         elif choice == "info":
             show_info_menu()
-            get_menu_choice(METHODS_MENU, prompt)
+            method = get_menu_choice(METHODS_MENU, prompt)
+            display_method_information(method)
+            pause()
             clear_screen()
         elif choice == "settings":
             show_settings_menu()
