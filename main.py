@@ -5,9 +5,9 @@ colorama.init(autoreset= True)
 
 from src.constants import MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS, COMPARE_MENU
 from src.utils import clear_screen
-from src.input_handler import get_menu_choice
+from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
-from src.parser import get_equation
+
 
 prompt = "Choice :"
 def main():
@@ -20,6 +20,7 @@ def main():
         if choice == "solve":
             show_solver_menu()
             get_menu_choice(METHODS_MENU, prompt)
+            initial_values = get_all_inputs()
             clear_screen()
         elif choice == "compare":
             show_compare_menu()

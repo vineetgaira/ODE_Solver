@@ -1,5 +1,6 @@
 """This file will store the input funtion for the equations and will parse them"""
 
+from colorama import Fore, Style
 from sympy import symbols
 from sympy.parsing.sympy_parser import (standard_transformations, implicit_multiplication_application, convert_xor)
 from sympy.parsing.sympy_parser import parse_expr
@@ -35,17 +36,17 @@ def has_valid_symbols(expr) -> bool:
 
 def get_equation():
     while True:
-        raw = input('Equation (dy/dx = ) : ')
+        raw = input(Fore.LIGHTCYAN_EX + 'Equation (dy/dx = ) : ')
         if not is_valid_charset(raw):
-            print('Invalid characters! Use only x, y, numbers and + - * / ^ ( )')
+            print(Fore.RED + 'Invalid characters! Use only x, y, numbers and + - * / ^ ( )')
             continue
         try:
             expr = safe_parse(raw)
         except (SympifyError, TypeError, SyntaxError):
-            print('Could not parse that expression. Check your parentheses and operators.')
+            print(Fore.RED + 'Could not parse that expression. Check your parentheses and operators.')
             continue
         if not has_valid_symbols(expr):
-            print('Equation must use only x and y, and cannot be a constant.')
+            print(Fore.RED + 'Equation must use only x and y, and cannot be a constant.')
             continue
         return expr
 
