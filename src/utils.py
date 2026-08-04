@@ -1,4 +1,5 @@
 """This is a general helper module to make things easy."""
+from colorama import Fore
 
 import os 
 
@@ -6,7 +7,7 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def pause():    
-    pass
+    input(Fore.LIGHTCYAN_EX + "<<<Press ENTER to return>>>")
 
 def format_number():
     pass

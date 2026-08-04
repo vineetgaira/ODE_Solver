@@ -28,7 +28,7 @@ def get_valid_float(prompt, is_valid=lambda v: True, error_message="Invalid valu
         except ValueError:
             print(Fore.RED + "Invalid value! Must be a number.")
 
-def collect_initial_values(equation, initial_x, initial_y, target_x, step_size, exact_solution):
+def collect_initial_values(equation, initial_x, initial_y, target_x, step_size):
 
     return {
     "equation": equation,
@@ -36,7 +36,6 @@ def collect_initial_values(equation, initial_x, initial_y, target_x, step_size, 
     "y0": initial_y,
     "target_x": target_x,
     "step_size": step_size,
-    "exact_solution": exact_solution,
     }
 
     
@@ -45,7 +44,7 @@ def get_all_inputs():
     initial_x = get_valid_float("Initial x (x₀) : ")
     initial_y = get_valid_float("Initial y (y₀) : ")
     target_x = get_valid_float("Target x : ")
-    exact_solution = get_valid_float("Enter the exact solution : ")
+    
 
     step_size = get_valid_float(
         "Step size (h) : ",
@@ -53,4 +52,4 @@ def get_all_inputs():
         "Invalid value! Must be greater than 0."
     )
 
-    return collect_initial_values(equation, initial_x, initial_y, target_x, step_size, exact_solution)
+    return collect_initial_values(equation, initial_x, initial_y, target_x, step_size,)

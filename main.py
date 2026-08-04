@@ -4,9 +4,12 @@ from colorama import Fore
 colorama.init(autoreset= True)
 
 from src.constants import MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS, COMPARE_MENU
-from src.utils import clear_screen
+from src.solver import solve_with_method, compare_methods
+from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
+from src.display import display_history
+
 
 
 prompt = "Choice :"
@@ -21,6 +24,10 @@ def main():
             initial_values = get_all_inputs()
             show_solver_menu()
             method = get_menu_choice(METHODS_MENU, prompt)
+            history = solve_with_method(method, initial_values["equation"], initial_values["x0"],
+                           initial_values["y0"], initial_values["target_x"], initial_values["step_size"])
+            display_history(history)
+            pause()
             clear_screen()
         elif choice == "compare":
             show_compare_menu()
