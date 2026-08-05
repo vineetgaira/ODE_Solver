@@ -1,4 +1,1 @@
-equation,x0,y0,target_x,step_size
 x + y,0.0,1.0,0.3,0.1
-log(x + y),0.0,2.0,0.2,0.05
-log(x**2 + y**2),0.0,1.0,0.8,0.2
