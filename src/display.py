@@ -17,8 +17,9 @@ def display_step():
 def display_solution():
     pass
 
-def display_comparison():
-    pass
+def display_comparison(solutions):
+    for key, value in solutions.items():
+        print(Fore.YELLOW + f"({key.capitalize()}) y({(value[-1][0])}) : x = {Fore.LIGHTBLUE_EX + str(value[-1][-1])}")
 
 def display_error():
     pass

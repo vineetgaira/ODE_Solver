@@ -8,7 +8,7 @@ from src.solver import solve_with_method, compare_methods
 from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
-from src.display import display_history, display_method_information
+from src.display import display_history, display_method_information, display_comparison
 
 
 
@@ -30,8 +30,14 @@ def main():
             pause()
             clear_screen()
         elif choice == "compare":
+            initial_values = get_all_inputs()
             show_compare_menu()
-            get_menu_choice(COMPARE_MENU, prompt)
+            compare_choice = get_menu_choice(COMPARE_MENU, prompt)
+            if compare_choice == "all":
+                solutions = compare_methods(initial_values["equation"], initial_values["x0"], 
+                                            initial_values["y0"], initial_values["target_x"], initial_values["step_size"]  )
+                display_comparison(solutions)
+            pause()
             clear_screen()
         elif choice == "plot":
             show_graph_menu()
