@@ -3,13 +3,14 @@
 PROGRAM_NAME = "Numerical ODE sovler"
 
 MAIN_MENU = {
-    1: "solve",
-    2: "compare",
-    3: "plot",
-    4: "info",
-    5: "settings",
-    6: "help",
-    7: "exit"
+    1: "new",
+    2: "solve",
+    3: "compare",
+    4: "plot",
+    5: "info",
+    6: "settings",
+    7: "help",
+    8: "exit"
 }
 
 METHODS_MENU = {

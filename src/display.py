@@ -35,3 +35,4 @@ def display_method_information(method):
 
 def display_separator():
     pass
+
