@@ -2,8 +2,6 @@
 
 PROGRAM_NAME = "Numerical ODE sovler"
 
-DECIMAL_PRECISION = 5
-
 MAIN_MENU = {
     1: "solve",
     2: "compare",

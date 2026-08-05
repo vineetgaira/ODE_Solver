@@ -1,12 +1,13 @@
 
 """This one's job is which algorithm to run ."""
 from src.methods import euler, heun, midpoint, ralston, rk4
-from src.constants import DECIMAL_PRECISION
+
+DECIMAL_PRECISION = 5
 
 METHODS_REGISTRY= {"euler": euler,
     "heun": heun,
     "midpoint": midpoint,
-    "raltson": ralston,
+    "ralston": ralston,
     "rk4": rk4
 }
 

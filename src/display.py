@@ -6,10 +6,10 @@ colorama.init(autoreset=True)
 from src.constants import METHOD_INFO
 
 def display_history(history):
-    iteration = 0
+    step = 0
     for i in history:
-        iteration +=1
-        print(Fore.GREEN + f"Iteration {iteration} : x{iteration}, y{iteration} = {Fore.LIGHTBLUE_EX + str(i)}")
+        step +=1
+        print(Fore.GREEN + f"Setp {step} : x{step}, y{step} = {Fore.LIGHTBLUE_EX + str(i)}")
         
 def display_step():
     pass
