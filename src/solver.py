@@ -15,7 +15,7 @@ def solve_with_method(method_name, equation, x0, y0, target_x, h):
     method_fn = METHODS_REGISTRY[method_name]
     history = [(x0, y0)]
     n_steps = round((target_x - x0)/h)
-    for i in range(n_steps):
+    for _ in range(n_steps):
         x0, y0 = method_fn(equation, x0, y0, h)
         history.append((round(x0, DECIMAL_PRECISION), round(y0, DECIMAL_PRECISION)))
     return history

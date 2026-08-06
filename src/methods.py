@@ -21,11 +21,11 @@ def rk2(equation, x0, y0, h, alpha, beta, c1, c2):
 
 def heun(equation, x0, y0, h):
    
-   return rk2(equation, x0, y0, h, alpha = 1, beta = 1, c1 = 1/2, c2 = 1/2)
+   return rk2(equation, x0, y0, h, alpha=1, beta=1, c1=1/2, c2=1/2)
 
 def midpoint(equation, x0, y0, h):
 
-    return rk2(equation, x0, y0, h, alpha = 1/2, beta = 1/2, c1 = 0, c2 = 1)
+    return rk2(equation, x0, y0, h, alpha=1/2, beta=1/2, c1=0, c2=1)
 
 def ralston(equation, x0, y0, h):
 

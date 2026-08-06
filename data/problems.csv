@@ -8,3 +8,5 @@ equation,x0,y0,target_x,step_size
 log(-x + y),0.0,1.0,0.3,0.1
 equation,x0,y0,target_x,step_size
 x + pi,0.0,1.0,0.1,0.02
+equation,x0,y0,target_x,step_size
+(x + y)/(x - y),0.0,1.0,0.3,0.1

@@ -26,7 +26,7 @@ def main():
         if choice == "new":
           current_problem = get_all_inputs()
           export_problme_csv(current_problem)
-          print(Fore.GREEN + "Problme Loaded.")
+          print(Fore.GREEN + "Problem Loaded.")
           pause()
         
         elif choice == "solve":
@@ -42,13 +42,13 @@ def main():
             clear_screen()
         elif choice == "compare":
             if current_problem is None:
-                print(Fore.RED + "No problme loaded.")
+                print(Fore.RED + "No problem loaded.")
             else:
                 show_compare_menu()
                 compare_choice = get_menu_choice(COMPARE_MENU, prompt)
                 if compare_choice == "all":
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
-                                                current_problem["y0"], current_problem["target_x"], current_problem["step_size"]  )
+                                                current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                     display_comparison(solutions)
                 elif compare_choice == "exact":
                     exact = get_valid_float(Fore.LIGHTCYAN_EX + "Exact Solution: ")

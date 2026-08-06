@@ -9,7 +9,7 @@ def display_history(history):
     step = 0
     for i in history:
         step +=1
-        print(Fore.GREEN + f"Setp {step} : x{step}, y{step} = {Fore.LIGHTBLUE_EX + str(i)}")
+        print(Fore.GREEN + f"Step {step} : x{step}, y{step} = {Fore.LIGHTBLUE_EX + str(i)}")
         
 def display_step():
     pass
