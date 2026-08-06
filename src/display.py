@@ -17,10 +17,7 @@ def display_step():
 def display_solution():
     pass
 
-def display_comparison(solutions, exact=None):
-    if exact is not None:
-        for key, value in solutions.items():
-            print(Fore.YELLOW + f"({key.capitalize()}) y({(value[-1][0])}) : x = {Fore.LIGHTBLUE_EX + str(value[-1][-1])} || Exact solution : {exact}, Errror = {value[-1][-1] - exact}")
+def display_comparison(solutions):
     for key, value in solutions.items():
         print(Fore.YELLOW + f"({key.capitalize()}) y({(value[-1][0])}) : x = {Fore.LIGHTBLUE_EX + str(value[-1][-1])}")
 

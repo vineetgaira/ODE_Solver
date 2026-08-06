@@ -2,3 +2,9 @@ equation,x0,y0,target_x,step_size
 x + y,0.0,1.0,0.3,0.1
 equation,x0,y0,target_x,step_size
 log(x + y),0.0,1.0,0.5,0.05
+equation,x0,y0,target_x,step_size
+x**2 + y**2,0.0,1.0,0.3,0.1
+equation,x0,y0,target_x,step_size
+log(-x + y),0.0,1.0,0.3,0.1
+equation,x0,y0,target_x,step_size
+x + pi,0.0,1.0,0.1,0.02
