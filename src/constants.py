@@ -23,10 +23,7 @@ METHODS_MENU = {
 
 COMPARE_MENU = {
     1: "all",
-    2: "exact",
-    3: "step_size",
-    4: "back"
-  
+    2: "exact"
 }
 
 PLOT_MENU = {

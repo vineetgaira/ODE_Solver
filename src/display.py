@@ -43,10 +43,23 @@ def display_solution(history, method_name, equation, exact_solution = None):
     else:
         console.print(f"[bold]Final:[/bold] y({round(final_x, DECIMAL_PRECISION)}) = {round(final_y, DECIMAL_PRECISION)}")
 
-def display_comparison(solutions):
-    for key, value in solutions.items():
-        print(Fore.YELLOW + f"({key.capitalize()}) y({(value[-1][0])}) : x = {Fore.LIGHTBLUE_EX + str(value[-1][-1])}")
+def display_comparison(solutions, equation, target_x, exact_solution = None):
+    table= Table(title=f"Method Comparison: dy/dx = {equation}, terget_x = {target_x}")
+    table.add_column("Method", style="cyan")
+    table.add_column("Final x", justify="right")
+    table.add_column("Final y", justify="right", style="green")
 
+    if exact_solution is not None:
+        table.add_column("Error", justify="right", style="red")
+
+    for name, history in solutions.items():
+        fx, fy = history[-1]
+        row = [name, f"{round(fx, DECIMAL_PRECISION)}", f"{round(fy, DECIMAL_PRECISION)}"]
+        if exact_solution is not None:
+            row.append(f"{round(abs(fy-exact_solution), DECIMAL_PRECISION)})")
+        table.add_row(*row)
+
+    console.print(table)
 
 def display_error():
     pass

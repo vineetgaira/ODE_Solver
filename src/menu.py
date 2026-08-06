@@ -75,8 +75,6 @@ def show_compare_menu():
 
     print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Compare All Methods")
     print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Compare With Exact Solution")
-    print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Compare Different Step Sizes")
-    print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Back")
 
 def show_info_menu():
     print(Fore.MAGENTA + "=" * 46)

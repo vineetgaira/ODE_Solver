@@ -49,11 +49,12 @@ def main():
                 if compare_choice == "all":
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
-                    display_comparison(solutions)
+                    display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=None)
                 elif compare_choice == "exact":
+                    solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
+                                                current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                     exact = get_valid_float(Fore.LIGHTCYAN_EX + "Exact Solution: ")
-                    display_comparison(solutions, exact)
-
+                    display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=exact)
             pause()
             clear_screen()
         elif choice == "plot":
