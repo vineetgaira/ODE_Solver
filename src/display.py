@@ -17,8 +17,6 @@ def display_history(history):
         step +=1
         print(Fore.GREEN + f"Step {step} : x{step}, y{step} = {Fore.LIGHTBLUE_EX + str(i)}")
         
-def display_step():
-    pass
 
 def display_solution(history, method_name, equation, exact_solution = None):
     table = Table(title=f"{method_name.upper()} Solution dy/dx = {equation}")
@@ -61,18 +59,17 @@ def display_comparison(solutions, equation, target_x, exact_solution = None):
 
     console.print(table)
 
-def display_error():
-    pass
+def display_error(message):
+    console.print(f"[bold red]Error:[/bold red] {message}")
 
-def display_success():
-    pass
+def display_success(message):
+    console.print(f"[bold green]Success:[/bold green] {message}")
 
 def display_method_information(method):
    
    for key, value in METHOD_INFO[method].items():
        print(f"{Fore.LIGHTYELLOW_EX + key} : {Fore.LIGHTGREEN_EX + value}")
-       
 
 def display_separator():
-    pass
+    console.print("_"*46, style="dim")
 
