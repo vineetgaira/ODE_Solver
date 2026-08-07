@@ -10,8 +10,10 @@ def export_problem_csv(current_problem):
             writer.writeheader()      # Writes the keys
         writer.writerow(current_problem)
 
-def export_txt():
-    pass
+def export_txt(current_problem, solutions):
+
+    with open("data/solutions.txt", "a") as file:
+        file.write(f"Problem : {current_problem}\nSolutions: {solutions}")
 
 def export_json():
     pass

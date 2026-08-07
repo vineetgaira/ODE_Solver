@@ -42,7 +42,7 @@ def display_solution(history, method_name, equation, exact_solution = None):
         console.print(f"[bold]Final:[/bold] y({round(final_x, DECIMAL_PRECISION)}) = {round(final_y, DECIMAL_PRECISION)}")
 
 def display_comparison(solutions, equation, target_x, exact_solution = None):
-    table= Table(title=f"Method Comparison: dy/dx = {equation}, terget_x = {target_x}")
+    table= Table(title=f"Method Comparison: dy/dx = {equation}, target_x = {target_x}")
     table.add_column("Method", style="cyan")
     table.add_column("Final x", justify="right")
     table.add_column("Final y", justify="right", style="green")

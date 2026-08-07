@@ -53,4 +53,7 @@ def get_equation():
 def f(equation, x0, y0):
     # Okay so this will solve it with initital values 
     # for example f(x, y) = x + y where x = 0, y = 2 the value will bet 0 + 2 = 2
-    return equation.subs({x: x0, y: y0}).evalf()
+    result = equation.subs({x: x0, y: y0}).evalf()
+    real_part, imag_part = result.as_real_imag()
+    return float(real_part)
+
