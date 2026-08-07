@@ -2,9 +2,13 @@
 import os
 import csv
 
+CACHE_FILE = "data/solutions_cache.csv"
+
+
+
 def export_problem_csv(current_problem):
-    file_exists = os.path.exists("data/problems.csv") and os.path.getsize("data/problems.csv") > 0
-    with open("data/problems.csv", "a", newline="") as file:
+    file_exists = os.path.exists(CACHE_FILE) and os.path.getsize(CACHE_FILE) > 0
+    with open(CACHE_FILE, "a", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=current_problem.keys())
         if not file_exists:
             writer.writeheader()      # Writes the keys
@@ -18,6 +22,9 @@ def export_txt(current_problem, solutions):
 
     with open("data/solutions.txt", "a") as file:
         file.write(f"Problem : {format_c_p}\nSolutions: {format_solutions}")
+
+
+    
 
 def export_json():
     pass
