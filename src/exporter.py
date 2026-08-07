@@ -2,9 +2,7 @@
 import os
 import csv
 
-CACHE_FILE = "data/solutions_cache.csv"
-
-
+CACHE_FILE = "data/problems.csv"
 
 def export_problem_csv(current_problem):
     file_exists = os.path.exists(CACHE_FILE) and os.path.getsize(CACHE_FILE) > 0
@@ -22,9 +20,6 @@ def export_txt(current_problem, solutions):
 
     with open("data/solutions.txt", "a") as file:
         file.write(f"Problem : {format_c_p}\nSolutions: {format_solutions}")
-
-
-    
 
 def export_json():
     pass
