@@ -11,9 +11,13 @@ def export_problem_csv(current_problem):
         writer.writerow(current_problem)
 
 def export_txt(current_problem, solutions):
+    for key, value in current_problem.items():
+        format_c_p = f"{key} : {value}"
+    for key, value in solutions.items():
+        format_solutions  = f"{key} : {value}\n"
 
     with open("data/solutions.txt", "a") as file:
-        file.write(f"Problem : {current_problem}\nSolutions: {solutions}")
+        file.write(f"Problem : {format_c_p}\nSolutions: {format_solutions}")
 
 def export_json():
     pass
