@@ -18,7 +18,6 @@ def export_txt(current_problem):
         with open ("data/problems.txt", "a") as file:
             file.write(f"{key} : {value}, ")
 
-
 def export_json():
     pass
 
