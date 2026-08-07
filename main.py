@@ -26,6 +26,7 @@ def main():
         if choice == "new":
             current_problem = get_all_inputs()
             export_problem_csv(current_problem)
+            export_txt(current_problem)
             print(Fore.GREEN + "Problem Loaded.")
             pause()
         
@@ -50,8 +51,6 @@ def main():
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                     display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=None)
-                    export_problem_csv(current_problem, solutions)
-                    export_txt(current_problem, solutions)
                 elif compare_choice == "exact":
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])

@@ -12,14 +12,12 @@ def export_problem_csv(current_problem):
             writer.writeheader()      # Writes the keys
         writer.writerow(current_problem)
 
-def export_txt(current_problem, solutions):
-    for key, value in current_problem.items():
-        format_c_p = f"{key} : {value}"
-    for key, value in solutions.items():
-        format_solutions  = f"{key} : {value}\n"
+def export_txt(current_problem):
 
-    with open("data/solutions.txt", "a") as file:
-        file.write(f"Problem : {format_c_p}\nSolutions: {format_solutions}")
+    for key , value in current_problem.items():
+        with open ("data/problems.txt", "a") as file:
+            file.write(f"{key} : {value}, ")
+
 
 def export_json():
     pass
