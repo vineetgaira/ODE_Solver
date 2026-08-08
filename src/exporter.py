@@ -43,7 +43,4 @@ def export_json(problem_record):
     with open(path, "w") as file:
         json.dump(data, file, sort_keys=True, indent=2)
     
-def save_history(history):
-    pass
-
 

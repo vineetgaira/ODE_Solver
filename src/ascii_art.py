@@ -10,7 +10,7 @@ banner = r"""
  ██║ ╚████║╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║██║╚██████╗██║  ██║███████╗
  ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝
 
-██████╗  ██████╗ ███████╗   ███████╗ ██████╗ ██╗     ██╗   ██╗███████╗██████╗
+ ██████╗  ██████╗ ███████╗   ███████╗ ██████╗ ██╗     ██╗   ██╗███████╗██████╗
 ██╔═══██╗██╔══██╗██╔════╝   ██╔════╝██╔═══██╗██║     ██║   ██║██╔════╝██╔══██╗
 ██║   ██║██║  ██║█████╗     ███████╗██║   ██║██║     ██║   ██║█████╗  ██████╔╝
 ██║   ██║██║  ██║██╔══╝     ╚════██║██║   ██║██║     ╚██╗ ██╔╝██╔══╝  ██╔══██╗
@@ -33,21 +33,14 @@ banner = r"""
      ┌─────────────────────────────────────────────────────┐
      │  dy/dt = f(t, y)     y(t₀) = y₀                     │
      │                                                     │
-     │  ORDER 1                                            │
-     │  ▸ Euler              y_{n+1} = y_n + h·f(t_n, y_n) │
-     │                                                     │
-     │  ORDER 2                                            │
-     │  ▸ Modified Euler     predictor–corrector avg slope │
-     │  ▸ Heun's Method      trapezoidal-rule corrector    │
-     │  ▸ Midpoint           slope at step midpoint        │
-     │  ▸ RK2                general 2nd-order Runge-Kutta │
-     │                                                     │
-     │  ORDER 4                                            │
-     │  ▸ RK4                weighted avg of 4 slopes      │
+     │  1 ▸ Euler              y_{n+1} = y_n + h·f(tₙ,yₙ)   │
+     │  2 ▸ Heun               trapezoidal predictor-corr. │
+     │  3 ▸ Midpoint           slope at step midpoint      │
+     │  4 ▸ Ralston            minimized-error 2nd order   │
+     │  5 ▸ RK4                weighted avg of 4 slopes    │
      └─────────────────────────────────────────────────────┘
 
-        · ⋅ .  ∘  ·     [ step-by-step integration ]    ·  ∘  . ⋅ ·
+    · ⋅ .  ∘  ·     [ step-by-step integration ]    ·  ∘  . ⋅ ·
     .         ·      ⋅         ∘         .        ·        ⋅       .
-
-             <<<<<< [Press ENTER to go ahead] >>>>>>>
+             <<<<<< [Press ENTER to go ahead] >>>>>>
 """
