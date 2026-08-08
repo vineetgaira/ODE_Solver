@@ -11,6 +11,7 @@ from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_me
 from src.display import display_history, display_method_information, display_comparison, display_solution
 from src.exporter import export_problem_csv, export_txt, export_json, json_serialized
 from src.input_handler import get_valid_float
+from src.graph import plot_solution
 
 current_problem = None
 
@@ -42,6 +43,7 @@ def main():
                 history = solve_with_method(method, current_problem["equation"], current_problem["x0"],
                             current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                 display_solution(history, method, current_problem["equation"] )
+                
             pause()
             clear_screen()
         elif choice == "compare":
@@ -63,8 +65,9 @@ def main():
             clear_screen()
         elif choice == "plot":
             show_graph_menu()
-            get_menu_choice(PLOT_MENU, prompt)
-            clear_screen()
+            plot_choice = get_menu_choice(PLOT_MENU, prompt)
+            if plot_choice == "solution":
+                plot_solution(history, method, current_problem['equation'] )
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)

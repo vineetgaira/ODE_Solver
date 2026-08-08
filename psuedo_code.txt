@@ -88,3 +88,7 @@ main menu, the main runs in a loop and executes on the basis of the user command
 the solutions we can't load it to a file, there is one solution which is wrapping it in try and finally but I don't want to do it as it 
 makes the program more complext. So the best thing that I can do is to load problems and their initial values to the files. Later you can solve
 them by looking them up.
+
+Okay so now I am building plot solution with the help of matplotlib, so there is still a design bug I am facing you can't plot until
+you have solved the problem or compare it, there are two options in the plot right now, compare solution(which is for a single method)
+and there is one more options which plots the comparison between all the methods.

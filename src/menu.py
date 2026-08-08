@@ -38,9 +38,9 @@ def show_graph_menu():
     print(Fore.GREEN + Style.BRIGHT + "     Select Plot Type")
     print(Fore.MAGENTA + "=" * 26)
 
-    print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Plot numerical solution")
-    print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Plot exact solution")
-    print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Plot both")
+    print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Plot solution")
+    print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Plot comparison")
+
 
 def show_settings_menu():
     print(Fore.MAGENTA + "=" * 26)

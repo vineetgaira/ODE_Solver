@@ -27,9 +27,8 @@ COMPARE_MENU = {
 }
 
 PLOT_MENU = {
-    1: "numerical",
-    2: "exact",
-    3: "both"
+    1: "solution",
+    2: "comparion"
 }
 
 SETTINGS = {
