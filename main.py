@@ -67,7 +67,7 @@ def main():
             show_graph_menu()
             plot_choice = get_menu_choice(PLOT_MENU, prompt)
             if plot_choice == "solution":
-                plot_solution(history, method, current_problem['equation'] )
+                pass
             elif plot_choice == "comparison":
                 pass
         elif choice == "info":

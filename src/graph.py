@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 from src.display import display_error
 
-def plot_solution(history, method_name, equation):
+def plot_solution(history=None, method_name=None, equation=None):
 
     if history is not None:
         x, y = zip(*history)
@@ -12,7 +12,7 @@ def plot_solution(history, method_name, equation):
         plt.xlabel("Values of x")
         plt.show()
     else:
-        display_error("Please enter a equation and solve with a method first.")
+        display_error("No solution to plot yet.")
 
 
 def plot_comparison(solutions):

@@ -13,3 +13,8 @@ x0 : 0.0
 y0 : 3.0 
 target_x : 0.9 
 step_size : 0.3 
+equation : 2*x + y 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.3 
+step_size : 0.1 
