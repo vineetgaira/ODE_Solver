@@ -15,9 +15,9 @@ def export_problem_csv(current_problem):
 
 def export_txt(current_problem):
 
-    for key , value in current_problem.items():
         with open ("data/problems.txt", "a") as file:
-            file.write(f"{key} : {value} \n")
+            for key , value in current_problem.items():
+                file.write(f"{key} : {value} \n")
 
 def json_serialized(equation, initial_x, initial_y, target_x, step_size, precision=6):
 
