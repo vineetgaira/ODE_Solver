@@ -83,5 +83,8 @@ Sovler:
             history.append((x0, y0))
         return history
 
-
-    
+Okay so I have created 3 modules which store the problem, I wanted to store the solutions as well but there is a design problem in the 
+main menu, the main runs in a loop and executes on the basis of the user command, so if until user doesn't make the command which gives us 
+the solutions we can't load it to a file, there is one solution which is wrapping it in try and finally but I don't want to do it as it 
+makes the program more complext. So the best thing that I can do is to load problems and their initial values to the files. Later you can solve
+them by looking them up.

@@ -9,7 +9,7 @@ from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
 from src.display import display_history, display_method_information, display_comparison, display_solution
-from src.exporter import export_problem_csv, export_txt, export_json
+from src.exporter import export_problem_csv, export_txt, export_json, json_serialized
 from src.input_handler import get_valid_float
 
 current_problem = None
@@ -27,7 +27,9 @@ def main():
             current_problem = get_all_inputs()
             export_problem_csv(current_problem)
             export_txt(current_problem)
-            # export_json(current_problem)
+            problem_record = json_serialized(current_problem['equation'], current_problem["x0"], current_problem["y0"],
+                             current_problem["target_x"], current_problem["step_size"])
+            export_json(problem_record)
             print(Fore.GREEN + "Problem Loaded.")
             pause()
         
