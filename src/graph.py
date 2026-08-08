@@ -1,7 +1,10 @@
 """This file will store functions to plot a graph."""
+import matplotlib.pyplot as plt
 
 def plot_solution(history):
-    pass
+    x, y = zip(*history)
+    
+    
 
 def plot_comparison(solutions):
     pass
