@@ -1,6 +1,7 @@
 """This file creates csv files"""
 import os
 import csv
+import json
 
 CACHE_FILE = "data/problems.csv"
 
@@ -16,10 +17,12 @@ def export_txt(current_problem):
 
     for key , value in current_problem.items():
         with open ("data/problems.txt", "a") as file:
-            file.write(f"{key} : {value}, ")
+            file.write(f"{key} : {value} \n")
 
-def export_json():
-    pass
+def export_json(current_problem):
+
+    with open ("data/problems.json", "w") as file:
+        json.dump(current_problem, file, indent=4)
 
 def save_history():
     pass

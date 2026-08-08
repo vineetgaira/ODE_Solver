@@ -1,1 +1,5 @@
-equation : x + y, x0 : 0.0, y0 : 1.0, target_x : 0.3, step_size : 0.1, 
+equation : -exp(y) + log(x) 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.5 
+step_size : 0.1 
