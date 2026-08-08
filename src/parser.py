@@ -1,5 +1,5 @@
 """This file will store the input funtion for the equations and will parse them"""
-
+import tokenize
 from colorama import Fore, Style
 from sympy import symbols
 from sympy.parsing.sympy_parser import (standard_transformations, implicit_multiplication_application, convert_xor)
@@ -42,7 +42,7 @@ def get_equation():
             continue
         try:
             expr = safe_parse(raw)
-        except (SympifyError, TypeError, SyntaxError):
+        except (SympifyError, TypeError, SyntaxError, tokenize.TokenError):
             print(Fore.RED + 'Could not parse that expression. Check your parentheses and operators.')
             continue
         if not has_valid_symbols(expr):

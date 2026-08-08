@@ -23,18 +23,27 @@ def json_serialized(equation, initial_x, initial_y, target_x, step_size, precisi
 
     return {
     "equation": str(equation),
-    "x0": str(round(initial_x, precision)),
-    "y0": str(round(initial_y, precision)),
-    "target_x": str(round(target_x, precision)),
-    "step_size": str(round(step_size, precision))
+    "x0": (round(initial_x, precision)),
+    "y0": (round(initial_y, precision)),
+    "target_x": (round(target_x, precision)),
+    "step_size": (round(step_size, precision))
     }
 
-
 def export_json(problem_record):
-    with open ("data/problems.json", "a") as file:
-        json.dump(problem_record, file, sort_keys=True, indent=2)
+
+    path = "data/problems.json"
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        with open(path, "r") as file:
+            data = json.load(file)
+    else:
+        data = []
+
+    data.append(problem_record)
+
+    with open(path, "w") as file:
+        json.dump(data, file, sort_keys=True, indent=2)
     
-def save_history():
+def save_history(history):
     pass
 
 
