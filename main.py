@@ -22,7 +22,7 @@ solutions = None
 
 prompt = "Choice :"
 def main():
-    global current_problem, history, method
+    global current_problem, history, method, solutions
     load_settings()
     show_banner()
     input() 
@@ -49,8 +49,7 @@ def main():
                 
             pause()
             clear_screen()
-        elif choice == "compare":
-            global solutions
+        elif choice == "compare": 
             if current_problem is None:
                 display_error("No problem loaded.")
             else:

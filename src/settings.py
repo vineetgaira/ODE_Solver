@@ -15,14 +15,14 @@ _settings = DEFAULT_SETTINGS.copy()
 def load_settings():
     global _settings
     if os.path.exists(SETTINGS_FILE) and os.path.getsize(SETTINGS_FILE) > 0:
-        with open ("SETTINGS_FILE", "r") as file:
+        with open (SETTINGS_FILE, "r") as file:
             saved = json.load(file)
         _settings = {**DEFAULT_SETTINGS, **saved}
     else:
         _settings = DEFAULT_SETTINGS.copy()
 
 def save_settings():
-    with open("SETTINGS_FILE", "w") as file:
+    with open(SETTINGS_FILE, "w") as file:
         json.dump(_settings, file, sort_keys=True, indent=2)
 
 def get_setting(key):
