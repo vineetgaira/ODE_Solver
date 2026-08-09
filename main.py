@@ -96,7 +96,8 @@ def main():
                     display_success(f"Graph saved to {filepath}")
             else:
                 display_error(f"Unrecognized plot option: {plot_choice}")
-                pause()
+            pause()
+            clear_screen()
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)

@@ -5,3 +5,8 @@ __pycache__/
 .env
 
 src/__pycache__
+
+data/settings.json
+
+
+

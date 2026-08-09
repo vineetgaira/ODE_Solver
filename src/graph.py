@@ -17,7 +17,6 @@ def _build_solution_plot(history, method_name, equation):
     plt.ylabel("Values of y")
     plt.title(f"{method_name.capitalize()}\ndy/dx = {equation}")
     plt.xlabel("Values of x")
-    plt.show()
 
 def _build_comparison_plot(solutions, equation):
     for method_name, history in solutions.items():
@@ -30,7 +29,6 @@ def _build_comparison_plot(solutions, equation):
     plt.xlabel("Values of x")
     plt.title(f"Method Comparison\ndy/dx = {equation}")
     plt.legend()
-    plt.show()
 
 def plot_solution(history, method_name, equation):
     _build_solution_plot(history, method_name, equation)

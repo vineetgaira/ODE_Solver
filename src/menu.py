@@ -16,7 +16,7 @@ def show_main_menu():
     print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Solve Initial Value Problem")
     print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Compare Numerical Methods")
     print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Plot Solution Graph")
-    print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "Veiw Method Information")
+    print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "View Method Information")
     print(Fore.WHITE + "  [6] " + Fore.LIGHTCYAN_EX + "Settings")
     print(Fore.WHITE + "  [7] " + Fore.LIGHTCYAN_EX + "Help")
     print(Fore.WHITE + "  [8] " + Fore.RED + "Exit")

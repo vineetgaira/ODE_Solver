@@ -1,7 +1,5 @@
 """This file will only store values that are constant."""
 
-PROGRAM_NAME = "Numerical ODE sovler"
-
 MAIN_MENU = {
     1: "new",
     2: "solve",
