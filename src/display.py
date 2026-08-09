@@ -60,10 +60,10 @@ def display_comparison(solutions, equation, target_x, exact_solution = None):
     console.print(table)
 
 def display_error(message):
-    console.print(f"[bold red]Error:[/bold red] {message}")
+    console.print(f"[bold red]Error: {message}[/bold red]")
 
 def display_success(message):
-    console.print(f"[bold green]Success:[/bold green] {message}")
+    console.print(f"[bold green]Success: {message}[/bold green]")
 
 def display_method_information(method):
    

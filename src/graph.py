@@ -8,7 +8,7 @@ def plot_solution(history=None, method_name=None, equation=None):
         x, y = zip(*history)
         plt.plot(x, y)
         plt.ylabel("Values of y")
-        plt.title(f"{method_name.capitalize()}\n{equation}")
+        plt.title(f"{method_name.capitalize()}\ndy/dx = {equation}")
         plt.xlabel("Values of x")
         plt.show()
     else:
@@ -16,7 +16,11 @@ def plot_solution(history=None, method_name=None, equation=None):
 
 
 def plot_comparison(solutions):
-    pass
+    for kye, value in solutions.items():
+        x, y = zip(*value)
+        plt.plot(x, y)
+        plt.ylabel()
+
 
 def plot_exact_solution(exact):
     pass

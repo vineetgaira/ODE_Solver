@@ -26,5 +26,26 @@
     "target_x": 0.3,
     "x0": 0.0,
     "y0": 1.0
+  },
+  {
+    "equation": "x - y + 2",
+    "step_size": 1.0,
+    "target_x": 0.0,
+    "x0": 0.0,
+    "y0": 1.0
+  },
+  {
+    "equation": "x + log(y)",
+    "step_size": 0.1,
+    "target_x": 0.5,
+    "x0": 0.0,
+    "y0": 1.0
+  },
+  {
+    "equation": "x + y",
+    "step_size": 0.1,
+    "target_x": 0.4,
+    "x0": 0.0,
+    "y0": 2.0
   }
 ]

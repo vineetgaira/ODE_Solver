@@ -8,16 +8,18 @@ from src.solver import solve_with_method, compare_methods
 from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
-from src.display import display_method_information, display_comparison, display_solution, display_error
+from src.display import display_method_information, display_comparison, display_solution, display_error, display_success
 from src.exporter import export_problem_csv, export_txt, export_json, json_serialized
 from src.input_handler import get_valid_float
 from src.graph import plot_solution
 
 current_problem = None
+history = None
+method = None
 
 prompt = "Choice :"
 def main():
-    global current_problem
+    global current_problem, history, method
     show_banner()
     input() 
     clear_screen()
@@ -31,12 +33,12 @@ def main():
             problem_record = json_serialized(current_problem['equation'], current_problem["x0"], current_problem["y0"],
                              current_problem["target_x"], current_problem["step_size"])
             export_json(problem_record)
-            print(Fore.GREEN + "Problem Loaded.")
+            display_success("Problem loaded.")
             pause()
         
         elif choice == "solve":
             if current_problem is None:
-                print(Fore.RED + "No problem laoded.")
+                display_error("No problem loaded.")
             else:
                 show_solver_menu()
                 method = get_menu_choice(METHODS_MENU, prompt)
@@ -48,7 +50,7 @@ def main():
             clear_screen()
         elif choice == "compare":
             if current_problem is None:
-                print(Fore.RED + "No problem loaded.")
+                display_error("No problem loaded.")
             else:
                 show_compare_menu()
                 compare_choice = get_menu_choice(COMPARE_MENU, prompt)
@@ -64,12 +66,16 @@ def main():
             pause()
             clear_screen()
         elif choice == "plot":
-            show_graph_menu()
-            plot_choice = get_menu_choice(PLOT_MENU, prompt)
-            if plot_choice == "solution":
-                pass
-            elif plot_choice == "comparison":
-                pass
+            if history is None:
+                display_error("No solution to plot yet. Solve a method first.")
+            else:
+                show_graph_menu()
+                plot_choice = get_menu_choice(PLOT_MENU, prompt)
+                if plot_choice == "solution":
+                    plot_solution(history ,method, current_problem['equation'])
+                elif plot_choice == "comparison":
+                    pass
+            pause()
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)
