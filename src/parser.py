@@ -1,10 +1,11 @@
 """This file will store the input funtion for the equations and will parse them"""
 import tokenize
-from colorama import Fore, Style
+from colorama import Fore
 from sympy import symbols
 from sympy.parsing.sympy_parser import (standard_transformations, implicit_multiplication_application, convert_xor)
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import SympifyError
+from src.display import display_error, display_success
 
 TRANSFORMS = standard_transformations + (
 implicit_multiplication_application, convert_xor
@@ -38,15 +39,15 @@ def get_equation():
     while True:
         raw = input(Fore.LIGHTCYAN_EX + 'Equation (dy/dx = ) : ')
         if not is_valid_charset(raw):
-            print(Fore.RED + 'Invalid characters! Use only x, y, numbers and + - * / ^ ( )')
+            display_error('Invalid characters! Use only x, y, numbers and + - * / ^ ( )')
             continue
         try:
             expr = safe_parse(raw)
         except (SympifyError, TypeError, SyntaxError, tokenize.TokenError):
-            print(Fore.RED + 'Could not parse that expression. Check your parentheses and operators.')
+            display_error('Could not parse that expression. Check your parentheses and operators.')
             continue
         if not has_valid_symbols(expr):
-            print(Fore.RED + 'Equation must use only x and y, and cannot be a constant.')
+            display_error('Equation must use only x and y, and cannot be a constant.')
             continue
         return expr
 

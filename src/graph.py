@@ -16,6 +16,7 @@ def plot_solution(history=None, method_name=None, equation=None):
 
 
 def plot_comparison(solutions):
+    
     for kye, value in solutions.items():
         x, y = zip(*value)
         plt.plot(x, y)

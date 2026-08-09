@@ -47,5 +47,12 @@
     "target_x": 0.4,
     "x0": 0.0,
     "y0": 2.0
+  },
+  {
+    "equation": "log(x) + exp(-y)",
+    "step_size": 0.05,
+    "target_x": 0.5,
+    "x0": 0.0,
+    "y0": 2.0
   }
 ]

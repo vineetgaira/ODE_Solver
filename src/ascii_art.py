@@ -42,5 +42,5 @@ banner = r"""
 
     · ⋅ .  ∘  ·     [ step-by-step integration ]    ·  ∘  . ⋅ ·
     .         ·      ⋅         ∘         .        ·        ⋅       .
-             <<<<<< [Press ENTER to go ahead] >>>>>>
+                     Press [ENTER] to go ahead.
 """
