@@ -25,7 +25,7 @@ def save_settings():
     with open("SETTINGS_FILE", "w") as file:
         json.dump(_settings, file, sort_keys=True, indent=2)
 
-def get_setting_key(key):
+def get_setting(key):
     return _settings[key]
 
 def set_settings(key, value):

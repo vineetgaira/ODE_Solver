@@ -9,9 +9,11 @@ from src.utils import clear_screen, pause
 from src.input_handler import get_menu_choice, get_all_inputs
 from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
 from src.display import display_method_information, display_comparison, display_solution, display_error, display_success
-from src.exporter import export_problem_csv, export_txt, export_json, json_serialized
+from src.exporter import save_problem, save_solutions
 from src.input_handler import get_valid_float
 from src.graph import plot_solution
+from src.settings import load_settings, get_setting, set_settings
+
 
 current_problem = None
 history = None
@@ -20,6 +22,7 @@ method = None
 prompt = "Choice :"
 def main():
     global current_problem, history, method
+    load_settings()
     show_banner()
     input() 
     clear_screen()
@@ -28,11 +31,8 @@ def main():
         choice = get_menu_choice(MAIN_MENU, prompt)
         if choice == "new":
             current_problem = get_all_inputs()
-            export_problem_csv(current_problem)
-            export_txt(current_problem)
-            problem_record = json_serialized(current_problem['equation'], current_problem["x0"], current_problem["y0"],
-                             current_problem["target_x"], current_problem["step_size"])
-            export_json(problem_record)
+            if get_setting("save_automatically"):
+                save_problem(current_problem)
             display_success("Problem loaded.")
             pause()
         
@@ -58,6 +58,8 @@ def main():
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                     display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=None)
+                    if get_setting("save_automatically"):
+                        save_solutions(current_problem, solutions)
                 elif compare_choice == "exact":
                     solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
@@ -82,9 +84,24 @@ def main():
             display_method_information(method)
             pause()
             clear_screen()
+
         elif choice == "settings":
             show_settings_menu()
-            get_menu_choice(SETTINGS, prompt)
+            setting_choice = get_menu_choice(SETTINGS, prompt)
+            if setting_choice == "precision":
+                new_val = int(get_valid_float(Fore.LIGHTCYAN_EX + "New decimal precision: "))
+                set_settings("precision", new_val)
+            elif setting_choice == "colour":
+                set_settings("colour", not get_setting("colour"))
+                print(Fore.GREEN + f"Colour output is now {'ON' if get_setting('colour') else 'OFF'}")
+            elif setting_choice == "save_res":
+                set_settings("save_automatically", not get_setting("save_automatically"))
+                print(Fore.GREEN + f"Auto-save is now {'ON' if get_setting('save_automatically') else 'OFF'}")
+            elif setting_choice == "graph_style":
+                new_style = "scatter" if get_setting("graph_style") == "line" else "line"
+                set_settings("graph_style", new_style)
+                print(Fore.GREEN + f"Graph style is now {new_style}")
+            pause()
             clear_screen()
         elif choice == "help":
             show_help_menu()

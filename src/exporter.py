@@ -43,4 +43,29 @@ def export_json(problem_record):
     with open(path, "w") as file:
         json.dump(data, file, sort_keys=True, indent=2)
     
+def save_problem(current_problem):
+    export_problem_csv(current_problem)
+    export_txt(current_problem)
+    problem_record = json_serialized(current_problem["equation"], current_problem["x0"],
+                     current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
+    export_json(problem_record)
 
+def save_solutions(current_problem, solutions, precision=None):
+    from src.settings import get_setting
+    precision = precision or get_setting("precision")
+    record = {
+        "equation": str(current_problem["equation"]),
+        "solutions": {
+            name: [(round(x, precision), round(y, precision)) for x, y in history]
+            for name, history in solutions.items()
+        }
+    }
+    path = "data/solutions.json"
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        with open(path, "r") as file:
+            data = json.load(file)
+    else:
+        data = []
+    data.append(record)
+    with open(path, "w") as file:
+        json.dump(data, file, sort_keys=True, indent=2)
