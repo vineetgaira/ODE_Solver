@@ -11,7 +11,7 @@ from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_me
 from src.display import display_method_information, display_comparison, display_solution, display_error, display_success
 from src.exporter import save_problem, save_solutions
 from src.input_handler import get_valid_float
-from src.graph import plot_solution, plot_comparison
+from src.graph import plot_solution, plot_comparison, save_graph
 from src.settings import load_settings, get_setting, set_settings
 
 
@@ -19,10 +19,11 @@ current_problem = None
 history = None
 method = None
 solutions = None
+last_plot = None
 
 prompt = "Choice :"
 def main():
-    global current_problem, history, method, solutions
+    global current_problem, history, method, solutions, last_plot
     load_settings()
     show_banner()
     input() 
@@ -78,12 +79,24 @@ def main():
                     display_error("No solution to plot yet. Solve a method first.")
                 else:
                     plot_solution(history ,method, current_problem['equation'])
+                    last_plot = {"type": "solution", "history": history, "method": method,
+                             "equation": current_problem["equation"]}
             elif plot_choice == "comparison":
                 if solutions is None:
                     display_error("No comparison to plot yet. Run compare method first.")
                 else:
                     plot_comparison(solutions, current_problem["equation"])
-            pause()
+                    last_plot = {"type": "comparison", "solutions": solutions,
+                             "equation": current_problem["equation"]}
+            elif plot_choice == "save":
+                if last_plot is None:
+                    display_error("No plot to save yet. Plot something first.")
+                else:
+                    filepath = save_graph(last_plot)
+                    display_success(f"Graph saved to {filepath}")
+            else:
+                display_error(f"Unrecognized plot option: {plot_choice}")
+                pause()
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)

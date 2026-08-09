@@ -7,121 +7,16 @@
     "y0": 1.0
   },
   {
-    "equation": "log(x + y)",
-    "step_size": 0.1,
-    "target_x": 0.3,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x + 2*y - 2",
-    "step_size": 0.3,
-    "target_x": 0.9,
-    "x0": 0.0,
-    "y0": 3.0
-  },
-  {
-    "equation": "2*x + y",
-    "step_size": 0.1,
-    "target_x": 0.3,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x - y + 2",
-    "step_size": 1.0,
-    "target_x": 0.0,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x + log(y)",
-    "step_size": 0.1,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x + y",
-    "step_size": 0.1,
-    "target_x": 0.4,
-    "x0": 0.0,
-    "y0": 2.0
-  },
-  {
-    "equation": "log(x) + exp(-y)",
-    "step_size": 0.05,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 2.0
-  },
-  {
-    "equation": "log(x + y)",
-    "step_size": 0.2,
-    "target_x": 0.4,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x + y",
-    "step_size": 0.1,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 0.3
-  },
-  {
-    "equation": "exp(-x*y)",
-    "step_size": 0.05,
-    "target_x": 0.3,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "x + 2*y",
-    "step_size": 0.05,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "log(x + y)",
-    "step_size": 0.05,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "log(x + y)",
-    "step_size": 0.05,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
-    "equation": "log(x**2 + y**2)",
-    "step_size": 0.1,
-    "target_x": 0.3,
-    "x0": 0.0,
-    "y0": 1.0
-  },
-  {
     "equation": "sin(x + y)",
-    "step_size": 0.05,
-    "target_x": 0.5,
+    "step_size": 0.07,
+    "target_x": 0.7,
     "x0": 0.0,
-    "y0": 2.0
+    "y0": 1.0
   },
   {
-    "equation": "sin(x + y)",
+    "equation": "cos(x**2 + y)",
     "step_size": 0.05,
-    "target_x": 0.5,
-    "x0": 0.0,
-    "y0": 2.0
-  },
-  {
-    "equation": "cos(x**2 + y**(-2))",
-    "step_size": 0.1,
-    "target_x": 0.5,
+    "target_x": 0.7,
     "x0": 0.0,
     "y0": 1.0
   }

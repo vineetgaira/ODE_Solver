@@ -3,88 +3,13 @@ x0 : 0.0
 y0 : 1.0 
 target_x : 0.3 
 step_size : 0.1 
-equation : log(x + y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.3 
-step_size : 0.1 
-equation : x + 2*y - 2 
-x0 : 0.0 
-y0 : 3.0 
-target_x : 0.9 
-step_size : 0.3 
-equation : 2*x + y 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.3 
-step_size : 0.1 
-equation : x - y + 2 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.0 
-step_size : 1.0 
-equation : x + log(y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.5 
-step_size : 0.1 
-equation : x + y 
-x0 : 0.0 
-y0 : 2.0 
-target_x : 0.4 
-step_size : 0.1 
-equation : log(x) + exp(-y) 
-x0 : 0.0 
-y0 : 2.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : log(x + y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.4 
-step_size : 0.2 
-equation : x + y 
-x0 : 0.0 
-y0 : 0.3 
-target_x : 0.5 
-step_size : 0.1 
-equation : exp(-x*y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.3 
-step_size : 0.05 
-equation : x + 2*y 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : log(x + y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : log(x + y) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : log(x**2 + y**2) 
-x0 : 0.0 
-y0 : 1.0 
-target_x : 0.3 
-step_size : 0.1 
 equation : sin(x + y) 
 x0 : 0.0 
-y0 : 2.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : sin(x + y) 
-x0 : 0.0 
-y0 : 2.0 
-target_x : 0.5 
-step_size : 0.05 
-equation : cos(x**2 + y**(-2)) 
+y0 : 1.0 
+target_x : 0.7 
+step_size : 0.07 
+equation : cos(x**2 + y) 
 x0 : 0.0 
 y0 : 1.0 
-target_x : 0.5 
-step_size : 0.1 
+target_x : 0.7 
+step_size : 0.05 

@@ -40,6 +40,7 @@ def show_graph_menu():
 
     print(Fore.WHITE + "  [1] " + Fore.LIGHTCYAN_EX + "Plot solution")
     print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Plot comparison")
+    print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Save last plot")
 
 
 def show_settings_menu():
