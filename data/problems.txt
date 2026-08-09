@@ -48,3 +48,23 @@ x0 : 0.0
 y0 : 0.3 
 target_x : 0.5 
 step_size : 0.1 
+equation : exp(-x*y) 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.3 
+step_size : 0.05 
+equation : x + 2*y 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.5 
+step_size : 0.05 
+equation : log(x + y) 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.5 
+step_size : 0.05 
+equation : log(x + y) 
+x0 : 0.0 
+y0 : 1.0 
+target_x : 0.5 
+step_size : 0.05 

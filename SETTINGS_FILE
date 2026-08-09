@@ -1,6 +1,6 @@
 {
   "colour": true,
-  "graph_style": "scatter",
-  "precision": 6,
+  "graph_style": "line",
+  "precision": 5,
   "save_automatically": false
 }

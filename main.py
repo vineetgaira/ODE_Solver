@@ -11,13 +11,14 @@ from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_me
 from src.display import display_method_information, display_comparison, display_solution, display_error, display_success
 from src.exporter import save_problem, save_solutions
 from src.input_handler import get_valid_float
-from src.graph import plot_solution
+from src.graph import plot_solution, plot_comparison
 from src.settings import load_settings, get_setting, set_settings
 
 
 current_problem = None
 history = None
 method = None
+solutions = None
 
 prompt = "Choice :"
 def main():
@@ -49,6 +50,7 @@ def main():
             pause()
             clear_screen()
         elif choice == "compare":
+            global solutions
             if current_problem is None:
                 display_error("No problem loaded.")
             else:
@@ -65,19 +67,24 @@ def main():
                                                 current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
                     exact = get_valid_float(Fore.LIGHTCYAN_EX + "Exact Solution: ")
                     display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=exact)
+                    if get_setting("save_automatically"):
+                        save_solutions(current_problem, solutions)
             pause()
             clear_screen()
         elif choice == "plot":
-            if history is None:
-                display_error("No solution to plot yet. Solve a method first.")
-            else:
-                show_graph_menu()
-                plot_choice = get_menu_choice(PLOT_MENU, prompt)
-                if plot_choice == "solution":
+            show_graph_menu()
+            plot_choice = get_menu_choice(PLOT_MENU, prompt)
+            if plot_choice == "solution":
+                if history is None:
+                    display_error("No solution to plot yet. Solve a method first.")
+                else:
                     plot_solution(history ,method, current_problem['equation'])
-                elif plot_choice == "comparison":
-                    pass
-            pause()
+            elif plot_choice == "comparison":
+                if solutions is None:
+                    display_error("No comparison to plot yet. Run compare method first.")
+                else:
+                    plot_comparison(solutions, current_problem["equation"])
+                pause()
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)
@@ -101,6 +108,8 @@ def main():
                 new_style = "scatter" if get_setting("graph_style") == "line" else "line"
                 set_settings("graph_style", new_style)
                 print(Fore.GREEN + f"Graph style is now {new_style}")
+            elif setting_choice == "return":
+                continue
             pause()
             clear_screen()
         elif choice == "help":

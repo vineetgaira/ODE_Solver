@@ -51,6 +51,7 @@ def show_settings_menu():
     print(Fore.WHITE + "  [2] " + Fore.LIGHTCYAN_EX + "Output colour")
     print(Fore.WHITE + "  [3] " + Fore.LIGHTCYAN_EX + "Save results automatically")
     print(Fore.WHITE + "  [4] " + Fore.LIGHTCYAN_EX + "Graph style")
+    print(Fore.WHITE + "  [5] " + Fore.LIGHTCYAN_EX + "Return")
     
 def show_help_menu():
     print(Fore.MAGENTA + "=" * 26)
