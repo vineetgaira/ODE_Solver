@@ -54,5 +54,19 @@
     "target_x": 0.5,
     "x0": 0.0,
     "y0": 2.0
+  },
+  {
+    "equation": "log(x + y)",
+    "step_size": 0.2,
+    "target_x": 0.4,
+    "x0": 0.0,
+    "y0": 1.0
+  },
+  {
+    "equation": "x + y",
+    "step_size": 0.1,
+    "target_x": 0.5,
+    "x0": 0.0,
+    "y0": 0.3
   }
 ]

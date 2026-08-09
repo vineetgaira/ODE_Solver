@@ -4,7 +4,7 @@ import os
 SETTINGS_FILE = "data/settings.json"
 
 DEFAULT_SETTINGS = {
-    "precison": 5,
+    "precision": 5,
     "colour": True,
     "save_automatically": True,
     "graph_style": "line"
