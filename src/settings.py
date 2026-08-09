@@ -28,6 +28,6 @@ def save_settings():
 def get_setting(key):
     return _settings[key]
 
-def set_settings(key, value):
+def set_setting(key, value):
     _settings[key] = value
     save_settings()

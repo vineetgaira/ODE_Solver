@@ -12,7 +12,7 @@ from src.display import display_method_information, display_comparison, display_
 from src.exporter import save_problem, save_solutions
 from src.input_handler import get_valid_float
 from src.graph import plot_solution, plot_comparison, save_graph
-from src.settings import load_settings, get_setting, set_settings
+from src.settings import load_settings, get_setting, set_setting
 
 
 current_problem = None
@@ -109,17 +109,21 @@ def main():
             show_settings_menu()
             setting_choice = get_menu_choice(SETTINGS, prompt)
             if setting_choice == "precision":
-                new_val = int(get_valid_float(Fore.LIGHTCYAN_EX + "New decimal precision: "))
-                set_settings("precision", new_val)
+                new_val = int(get_valid_float(
+                    Fore.LIGHTCYAN_EX + "New decimal precision: ",
+                    lambda v: v >= 0,
+                    "Invalid value! Precision must be 0 or greater."
+                ))
+                set_setting("precision", new_val)
             elif setting_choice == "colour":
-                set_settings("colour", not get_setting("colour"))
+                set_setting("colour", not get_setting("colour"))
                 print(Fore.GREEN + f"Colour output is now {'ON' if get_setting('colour') else 'OFF'}")
             elif setting_choice == "save_res":
-                set_settings("save_automatically", not get_setting("save_automatically"))
+                set_setting("save_automatically", not get_setting("save_automatically"))
                 print(Fore.GREEN + f"Auto-save is now {'ON' if get_setting('save_automatically') else 'OFF'}")
             elif setting_choice == "graph_style":
                 new_style = "scatter" if get_setting("graph_style") == "line" else "line"
-                set_settings("graph_style", new_style)
+                set_setting("graph_style", new_style)
                 print(Fore.GREEN + f"Graph style is now {new_style}")
             elif setting_choice == "return":
                 continue

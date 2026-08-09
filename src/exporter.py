@@ -5,6 +5,16 @@ import json
 
 CACHE_FILE = "data/problems.csv"
 
+def append_json_record(path, record):
+    if os.path.exists(path) and os.path.getsize(path) > 0:
+        with open(path, "r") as file:
+            data = json.load(file)
+    else:
+        data = []
+    data.append(record)
+    with open(path, "w") as file:
+        json.dump(data, file, sort_keys=True, indent=2)
+
 def export_problem_csv(current_problem):
     file_exists = os.path.exists(CACHE_FILE) and os.path.getsize(CACHE_FILE) > 0
     with open(CACHE_FILE, "a", newline="") as file:
@@ -30,18 +40,7 @@ def json_serialized(equation, initial_x, initial_y, target_x, step_size, precisi
     }
 
 def export_json(problem_record):
-
-    path = "data/problems.json"
-    if os.path.exists(path) and os.path.getsize(path) > 0:
-        with open(path, "r") as file:
-            data = json.load(file)
-    else:
-        data = []
-
-    data.append(problem_record)
-
-    with open(path, "w") as file:
-        json.dump(data, file, sort_keys=True, indent=2)
+    append_json_record("data/problems.json", problem_record)
     
 def save_problem(current_problem):
     export_problem_csv(current_problem)
@@ -60,12 +59,4 @@ def save_solutions(current_problem, solutions, precision=None):
             for name, history in solutions.items()
         }
     }
-    path = "data/solutions.json"
-    if os.path.exists(path) and os.path.getsize(path) > 0:
-        with open(path, "r") as file:
-            data = json.load(file)
-    else:
-        data = []
-    data.append(record)
-    with open(path, "w") as file:
-        json.dump(data, file, sort_keys=True, indent=2)
+    append_json_record("data/solutions.json", record)
