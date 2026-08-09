@@ -2,5 +2,5 @@
   "colour": true,
   "graph_style": "line",
   "precision": 8,
-  "save_automatically": true
+  "save_automatically": false
 }
