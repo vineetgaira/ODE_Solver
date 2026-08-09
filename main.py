@@ -83,7 +83,7 @@ def main():
                     display_error("No comparison to plot yet. Run compare method first.")
                 else:
                     plot_comparison(solutions, current_problem["equation"])
-                pause()
+            pause()
         elif choice == "info":
             show_info_menu()
             method = get_menu_choice(METHODS_MENU, prompt)

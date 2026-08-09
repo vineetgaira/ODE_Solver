@@ -28,7 +28,7 @@ COMPARE_MENU = {
 
 PLOT_MENU = {
     1: "solution",
-    2: "comparion"
+    2: "comparison"
 }
 
 SETTINGS = {
