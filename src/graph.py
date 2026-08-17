@@ -1,4 +1,3 @@
-"""This file will store functions to plot a graph."""
 import os
 import re
 import time

@@ -1,5 +1,4 @@
 
-"""This one's job is which algorithm to run ."""
 from src.methods import euler, heun, midpoint, ralston, rk4
 
 

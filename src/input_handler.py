@@ -1,5 +1,3 @@
-"""This file handles user input"""
-
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)

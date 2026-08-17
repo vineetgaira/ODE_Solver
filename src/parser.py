@@ -1,4 +1,3 @@
-"""This file will store the input funtion for the equations and will parse them"""
 import tokenize
 from colorama import Fore
 from sympy import symbols

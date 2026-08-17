@@ -1,4 +1,3 @@
-"""This file creates csv files"""
 import os
 import csv
 import json

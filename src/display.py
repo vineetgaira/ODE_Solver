@@ -1,5 +1,3 @@
-"""This file will only store function that will display to the screen."""
-
 import colorama 
 from colorama import Fore
 colorama.init(autoreset=True)
