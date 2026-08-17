@@ -1,5 +1,3 @@
-"""This file will only store values that are constant."""
-
 MAIN_MENU = {
     1: "new",
     2: "solve",
