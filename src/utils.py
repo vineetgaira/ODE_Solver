@@ -7,3 +7,6 @@ def clear_screen():
 
 def pause():    
     input(Fore.LIGHTCYAN_EX + "Press [ENTER] to return.")
+
+def error(message):
+    print(Fore.RED + message)
