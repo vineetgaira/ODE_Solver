@@ -4,7 +4,7 @@ from sympy import symbols
 from sympy.parsing.sympy_parser import (standard_transformations, implicit_multiplication_application, convert_xor)
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import SympifyError
-from src.display import display_error, display_success
+from src.display import display_error
 
 TRANSFORMS = standard_transformations + (
 implicit_multiplication_application, convert_xor
