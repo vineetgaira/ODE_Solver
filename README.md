@@ -137,6 +137,10 @@ ODE_Solver/
 └── data/                        # Exported problems, solutions, settings, saved graphs
 ```
 
+## Documentation
+
+See [`docs/ode-solver.md`](docs/ode-solver.md) for the numerical methods, the project’s development history, and the full path from equation input to displayed/exported results.
+
 ---
 
 ## What's Still In Progress
