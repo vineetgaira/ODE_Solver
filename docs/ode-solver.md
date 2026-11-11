@@ -6,9 +6,9 @@ This guide describes the implementation in this repository, including the numeri
 
 The program accepts a scalar first-order initial-value problem
 
-\[
+```math
   y' = f(x,y), \qquad y(x_0)=y_0,
-\]
+```
 
 and a target coordinate `target_x` plus a fixed step size `h`. A numerical method repeatedly estimates the next value of `y` from the current pair `(x_n, y_n)`. The solver stores the initial point and every computed point as a sequence `[(x_0,y_0), (x_1,y_1), ...]`.
 
@@ -20,9 +20,9 @@ Write `f_n = f(x_n,y_n)`. Each method returns the next coordinate and value `(x_
 
 ### Euler
 
-\[
+```math
  x_{n+1}=x_n+h, \qquad y_{n+1}=y_n+h f(x_n,y_n).
-\]
+```
 
 This is the forward tangent-line estimate. It evaluates the derivative once per step. Its local truncation error is order `h²` and its accumulated/global error is order `h` for a sufficiently smooth problem. It is inexpensive and useful as a baseline, but can be inaccurate or unstable for a large step.
 
@@ -30,11 +30,11 @@ This is the forward tangent-line estimate. It evaluates the derivative once per 
 
 `src/methods.py` factors three second-order Runge–Kutta schemes into `rk2`. Its parameters correspond to
 
-\[
+```math
  k_1=f(x_n,y_n),\quad
  k_2=f(x_n+\alpha h, y_n+\beta h k_1),\quad
  y_{n+1}=y_n+h(c_1k_1+c_2k_2).
-\]
+```
 
 The concrete coefficient sets are:
 
@@ -50,7 +50,7 @@ Each uses two derivative evaluations per step. They all have local error order `
 
 In `rk4`, the implementation stores the increments (each `k` already includes `h`):
 
-\[
+```math
 \begin{aligned}
  k_1 &= h f(x_n,y_n),\\
  k_2 &= h f(x_n+h/2,y_n+k_1/2),\\
@@ -59,7 +59,7 @@ In `rk4`, the implementation stores the increments (each `k` already includes `h
  y_{n+1} &= y_n+(k_1+2k_2+2k_3+k_4)/6,\\
  x_{n+1} &= x_n+h.
 \end{aligned}
-\]
+```
 
 It evaluates the derivative four times per step. Its local truncation error is order `h⁵`; its global error is order `h⁴`. It is not an adaptive or implicit RK method, and “order four” does not guarantee accuracy for every equation or step size.
 
@@ -78,7 +78,7 @@ Useful history commands for a deeper audit:
 ```sh
 git log --oneline --reverse
 git log --oneline -- src/methods.py src/solver.py src/parser.py
-git show <commit>
+git show COMMIT
 ```
 
 ## 4. End-to-end execution
