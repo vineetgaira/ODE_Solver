@@ -1,5 +1,5 @@
 import json
-import os 
+import os
 
 SETTINGS_FILE = "data/settings.json"
 

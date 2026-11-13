@@ -1,5 +1,6 @@
 from src.parser import f
 
+
 def euler(equation, x0, y0, h):
     slope = f(equation, x0, y0)
     x1 = x0 + h

@@ -1,19 +1,33 @@
 """This file will store the main project loop."""
 import colorama
 from colorama import Fore
+
 colorama.init(autoreset= True)
 
-from src.constants import MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS, COMPARE_MENU
-from src.solver import solve_with_method, compare_methods
-from src.utils import clear_screen, pause
-from src.input_handler import get_menu_choice, get_all_inputs
-from src.menu import show_banner, show_main_menu, show_solver_menu, show_help_menu, show_settings_menu, show_graph_menu,show_compare_menu, show_info_menu
-from src.display import display_method_information, display_comparison, display_solution, display_error, display_success
+from src.constants import COMPARE_MENU, MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS
+from src.display import (
+    display_comparison,
+    display_error,
+    display_method_information,
+    display_solution,
+    display_success,
+)
 from src.exporter import save_problem, save_solutions
-from src.input_handler import get_valid_float
-from src.graph import plot_solution, plot_comparison, save_graph
-from src.settings import load_settings, get_setting, set_setting
-
+from src.graph import plot_comparison, plot_solution, save_graph
+from src.input_handler import get_all_inputs, get_menu_choice, get_valid_float
+from src.menu import (
+    show_banner,
+    show_compare_menu,
+    show_graph_menu,
+    show_help_menu,
+    show_info_menu,
+    show_main_menu,
+    show_settings_menu,
+    show_solver_menu,
+)
+from src.settings import get_setting, load_settings, set_setting
+from src.solver import compare_methods, solve_with_method
+from src.utils import clear_screen, pause
 
 current_problem = None
 history = None

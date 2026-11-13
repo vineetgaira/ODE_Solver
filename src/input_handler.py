@@ -1,7 +1,9 @@
 import colorama
 from colorama import Fore
+
 colorama.init(autoreset=True)
 from src.parser import get_equation
+
 
 def get_menu_choice(options: dict, prompt: str):
     valid_choices = set(options.keys())

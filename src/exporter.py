@@ -1,6 +1,6 @@
-import os
 import csv
 import json
+import os
 
 CACHE_FILE = "data/problems.csv"
 

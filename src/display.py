@@ -1,12 +1,12 @@
-import colorama 
+import colorama
 from colorama import Fore
+
 colorama.init(autoreset=True)
-from src.constants import METHOD_INFO
 from rich.console import Console
 from rich.table import Table
 
+from src.constants import METHOD_INFO
 from src.settings import get_setting
-
 
 console = Console()
 

@@ -1,9 +1,14 @@
 import tokenize
+
 from colorama import Fore
-from sympy import symbols
-from sympy.parsing.sympy_parser import (standard_transformations, implicit_multiplication_application, convert_xor)
-from sympy.parsing.sympy_parser import parse_expr
-from sympy import SympifyError
+from sympy import SympifyError, symbols
+from sympy.parsing.sympy_parser import (
+    convert_xor,
+    implicit_multiplication_application,
+    parse_expr,
+    standard_transformations,
+)
+
 from src.display import display_error
 
 TRANSFORMS = standard_transformations + (

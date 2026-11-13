@@ -1,7 +1,9 @@
 import os
 import re
 import time
+
 import matplotlib.pyplot as plt
+
 from src.settings import get_setting
 
 GRAPH_DIR = "data/graphs"

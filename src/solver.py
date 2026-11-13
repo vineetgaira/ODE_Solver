@@ -1,7 +1,6 @@
 
 from src.methods import euler, heun, midpoint, ralston, rk4
 
-
 METHODS_REGISTRY= {"euler": euler,
     "heun": heun,
     "midpoint": midpoint,
