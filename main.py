@@ -1,8 +1,8 @@
-"""This file will store the main project loop."""
+"""Command-line entry point for the ODE solver."""
 import colorama
 from colorama import Fore
 
-colorama.init(autoreset= True)
+colorama.init(autoreset=True)
 
 from src.constants import COMPARE_MENU, MAIN_MENU, METHODS_MENU, PLOT_MENU, SETTINGS
 from src.display import (
@@ -36,49 +36,72 @@ solutions = None
 last_plot = None
 
 prompt = "Choice :"
+
+
 def main():
     global current_problem, history, method, solutions, last_plot
     load_settings()
     show_banner()
-    input() 
+    input("Press ENTER to continue.")
     clear_screen()
     while True:
         show_main_menu()
         choice = get_menu_choice(MAIN_MENU, prompt)
         if choice == "new":
             current_problem = get_all_inputs()
+            # Results belong to the problem they were computed from.
+            history = None
+            method = None
+            solutions = None
+            last_plot = None
             if get_setting("save_automatically"):
                 save_problem(current_problem)
             display_success("Problem loaded.")
             pause()
-        
+
         elif choice == "solve":
             if current_problem is None:
                 display_error("No problem loaded.")
             else:
                 show_solver_menu()
                 method = get_menu_choice(METHODS_MENU, prompt)
-                history = solve_with_method(method, current_problem["equation"], current_problem["x0"],
-                            current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
-                display_solution(history, method, current_problem["equation"] )
-                
+                history = solve_with_method(
+                    method,
+                    current_problem["equation"],
+                    current_problem["x0"],
+                    current_problem["y0"],
+                    current_problem["target_x"],
+                    current_problem["step_size"],
+                )
+                display_solution(history, method, current_problem["equation"])
+
             pause()
             clear_screen()
-        elif choice == "compare": 
+        elif choice == "compare":
             if current_problem is None:
                 display_error("No problem loaded.")
             else:
                 show_compare_menu()
                 compare_choice = get_menu_choice(COMPARE_MENU, prompt)
                 if compare_choice == "all":
-                    solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
-                                                current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
+                    solutions = compare_methods(
+                        current_problem["equation"],
+                        current_problem["x0"],
+                        current_problem["y0"],
+                        current_problem["target_x"],
+                        current_problem["step_size"],
+                    )
                     display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=None)
                     if get_setting("save_automatically"):
                         save_solutions(current_problem, solutions)
                 elif compare_choice == "exact":
-                    solutions = compare_methods(current_problem["equation"], current_problem["x0"], 
-                                                current_problem["y0"], current_problem["target_x"], current_problem["step_size"])
+                    solutions = compare_methods(
+                        current_problem["equation"],
+                        current_problem["x0"],
+                        current_problem["y0"],
+                        current_problem["target_x"],
+                        current_problem["step_size"],
+                    )
                     exact = get_valid_float(Fore.LIGHTCYAN_EX + "Exact Solution: ")
                     display_comparison(solutions, current_problem["equation"], current_problem["target_x"], exact_solution=exact)
                     if get_setting("save_automatically"):
@@ -89,19 +112,19 @@ def main():
             show_graph_menu()
             plot_choice = get_menu_choice(PLOT_MENU, prompt)
             if plot_choice == "solution":
-                if history is None:
+                if history is None or current_problem is None:
                     display_error("No solution to plot yet. Solve a method first.")
                 else:
-                    plot_solution(history ,method, current_problem['equation'])
+                    plot_solution(history, method, current_problem["equation"])
                     last_plot = {"type": "solution", "history": history, "method": method,
-                             "equation": current_problem["equation"]}
+                                 "equation": current_problem["equation"]}
             elif plot_choice == "comparison":
-                if solutions is None:
+                if solutions is None or current_problem is None:
                     display_error("No comparison to plot yet. Run compare method first.")
                 else:
                     plot_comparison(solutions, current_problem["equation"])
                     last_plot = {"type": "comparison", "solutions": solutions,
-                             "equation": current_problem["equation"]}
+                                 "equation": current_problem["equation"]}
             elif plot_choice == "save":
                 if last_plot is None:
                     display_error("No plot to save yet. Plot something first.")
@@ -114,8 +137,8 @@ def main():
             clear_screen()
         elif choice == "info":
             show_info_menu()
-            method = get_menu_choice(METHODS_MENU, prompt)
-            display_method_information(method)
+            info_method = get_menu_choice(METHODS_MENU, prompt)
+            display_method_information(info_method)
             pause()
             clear_screen()
 
@@ -148,8 +171,12 @@ def main():
             pause()
             clear_screen()
         elif choice == "exit":
-            print(Fore.LIGHTCYAN_EX+ "Thanks for using.")
+            print(Fore.LIGHTCYAN_EX + "Thanks for using.")
             return
-    
-if __name__ =="__main__":
-    main()
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except EOFError:
+        print(Fore.LIGHTCYAN_EX + "\nInput closed. Thanks for using.")
